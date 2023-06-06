@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Natural Language Processing</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+  .floating-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 50%;
+    background-color: #87CEFA;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+</style>
+<body>
+  <a href="index.html" class="floating-button">back</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Natural Language Processing</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#word">Word</a>
+          <ul class="navbar-nav ml-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#word-separation">1.1 Word Separation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#word-annotation">1.2 Word Annotation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#entity-recognition">1.3 Entity Recognition</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#keyword-extraction">1.4 Keyword Extraction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#useless-word-filtering">1.5 Useless Word Filtering</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#sentence">Sentence</a>
+          <ul class="navbar-nav ml-3">
+            <li class="nav-item">
+              <a class="nav-link" href="#semantic-analysis">2.1 Semantic Analysis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#text-similarity">2.2 Text Similarity (Word2Vec)</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="word" class="container mt-5">
+    <h2>Word</h2>
+    <section id="word-separation">
+      <h4>1.1 Word Separation</h4>
+      <div class="container mt-5">
+        <!-- <h2>1.1 Word Separation</h2> -->
+        <p>
+          Word Separation, also known as Word Tokenization, is the process of dividing a text or sequence of characters into individual words. The principles behind word separation can vary depending on the specific language and the desired level of granularity. In general, the following principles are commonly applied:
+        </p>
+        <ul>
+          <li>
+            <strong>Whitespace-based separation:</strong> This principle involves splitting the input text based on whitespace characters such as spaces, tabs, or line breaks. It assumes that words are separated by these whitespace characters.
+          </li>
+          <li>
+            <strong>Punctuation-based separation:</strong> This principle involves using punctuation marks as delimiters to separate words. Common punctuation marks used for word separation include periods, commas, exclamation marks, and question marks.
+          </li>
+          <li>
+            <strong>Language-specific separation rules:</strong> Different languages may have specific rules for word separation. For example, in some languages, compound words are formed by combining multiple words without whitespace in between. Language-specific rules take into account these linguistic conventions to accurately separate words.
+          </li>
+        </ul>
+    
+        <p>
+          Word separation has numerous applications in natural language processing and text analysis. Some of the key applications include:
+        </p>
+        <ul>
+          <li>
+            <strong>Part-of-speech tagging:</strong> Word separation is essential for identifying and labeling the parts of speech of individual words, which is crucial for syntactic and semantic analysis of sentences.
+          </li>
+          <li>
+            <strong>Text normalization:</strong> Word separation helps in standardizing the representation of words, which is important for various text processing tasks, including machine translation, information retrieval, and sentiment analysis.
+          </li>
+          <li>
+            <strong>Language modeling:</strong> Accurate word separation is essential for building language models that capture the statistical properties of word sequences, enabling applications such as speech recognition and machine translation.
+          </li>
+        </ul>
+    
+        <p>
+          Here's an example to illustrate word separation:
+        </p>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Input Text: "NaturalLanguageProcessing"</p>
+            <p class="card-text">Separated Words: "Natural", "Language", "Processing"</p>
+          </div>
+        </div>
+    
+        <div class="mt-4">
+          <img src="https://qph.cf2.quoracdn.net/main-qimg-a9cf3ff1e952047e7a6ae91a7ce2a5fb" alt="Word Separation Illustration" class="img-fluid">
+        </div>
+      </div>
+    </section>
+    <section id="word-annotation">
+      <h4>1.2 Word Annotation</h4>
+      <div class="container mt-5">
+        <!-- <h2>1.2 Word Annotation</h2> -->
+        <p>
+          Word Annotation is the process of assigning additional information or metadata to individual words in a text. It involves labeling words with their part-of-speech (POS) tags, syntactic dependencies, or semantic categories to enhance the understanding of the text. The principles and techniques used for word annotation depend on the specific annotation scheme and the desired level of linguistic analysis. Here are some common principles of word annotation:
+        </p>
+        <ul>
+          <li>
+            <strong>Part-of-speech (POS) tagging:</strong> POS tagging is a widely used form of word annotation, where each word is assigned a grammatical category such as noun, verb, adjective, or adverb. This information helps in understanding the syntactic structure and grammatical relationships within a sentence.
+          </li>
+          <li>
+            <strong>Syntactic annotation:</strong> Syntactic annotation involves identifying the syntactic dependencies between words in a sentence. It includes labeling words as subjects, objects, modifiers, or other grammatical roles to capture the hierarchical structure of the sentence.
+          </li>
+          <li>
+            <strong>Semantic annotation:</strong> Semantic annotation focuses on assigning meaning or semantic categories to words. This can involve labeling words with their named entity types (e.g., person, location, organization), sentiment polarity (positive, negative, neutral), or other semantic attributes.
+          </li>
+        </ul>
+    
+        <p>
+          Word annotation has various applications in natural language processing and text analysis. Some of the key applications include:
+        </p>
+        <ul>
+          <li>
+            <strong>Syntax and grammar analysis:</strong> Word annotation enables the analysis of sentence structure, syntactic relationships, and grammatical correctness. It is crucial for tasks such as parsing, syntactic parsing, and grammar checking.
+          </li>
+          <li>
+            <strong>Information extraction:</strong> Annotated words provide valuable information for extracting structured data from unstructured text. Named entity recognition, relation extraction, and event extraction are some examples of information extraction tasks that rely on word annotation.
+          </li>
+          <li>
+            <strong>Machine translation and language generation:</strong> Word annotation facilitates the development of language models and translation systems. It helps in disambiguating word senses, improving translation accuracy, and generating coherent and grammatically correct text.
+          </li>
+        </ul>
+    
+        <p>
+          Here's an example to illustrate word annotation:
+        </p>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Input Text: "I saw a cat chasing a mouse."</p>
+            <p class="card-text">Annotated Words: "I" (PRON), "saw" (VERB), "a" (DET), "cat" (NOUN), "chasing" (VERB), "a" (DET), "mouse" (NOUN), "." (PUNCT)</p>
+          </div>
+        </div>
+    
+        <div class="mt-4">
+          <img src="https://www.anolytics.ai/wp-content/uploads/2021/09/Text-Annotation.jpg" alt="Word Annotation Illustration" class="img-fluid">
+        </div>
+      </div>
+    </section>
+    <section id="entity-recognition">
+      <h4>1.3 Entity Recognition</h4>
+      <div class="container mt-5">
+        <!-- <h2>1.3 Entity Recognition</h2> -->
+        <p>
+          Entity Recognition, also known as Named Entity Recognition (NER), is the process of identifying and classifying named entities in a text. Named entities refer to real-world objects such as persons, locations, organizations, dates, and other types of named entities depending on the application domain. Here are some principles of entity recognition:
+        </p>
+        <ul>
+          <li>
+            <strong>Pattern-based matching:</strong> Entity recognition often involves using predefined patterns or rules to identify entities. These patterns can be based on regular expressions, grammatical structures, or other language-specific rules.
+          </li>
+          <li>
+            <strong>Statistical models:</strong> Machine learning techniques, such as statistical models (e.g., conditional random fields, recurrent neural networks), can be employed for entity recognition. These models learn patterns from annotated training data and then use that knowledge to predict entities in new texts.
+          </li>
+          <li>
+            <strong>Hybrid approaches:</strong> Some entity recognition systems combine rule-based approaches with statistical models to achieve higher accuracy. These systems leverage the strengths of both approaches to handle different types of entities and variations in text.
+          </li>
+        </ul>
+    
+        <p>
+          Entity recognition has various applications in natural language processing and text analysis. Some of the key applications include:
+        </p>
+        <ul>
+          <li>
+            <strong>Information extraction:</strong> Entity recognition plays a crucial role in extracting structured information from unstructured text. It helps in identifying relevant entities for further analysis, such as extracting product names, person names, or organization names from text.
+          </li>
+          <li>
+            <strong>Question answering:</strong> Entity recognition is important for answering questions that require specific named entity information. For example, given a question like "Who is the CEO of Apple?", entity recognition can help identify the entity "Apple" as an organization and retrieve the corresponding CEO information.
+          </li>
+          <li>
+            <strong>Text classification:</strong> Entity recognition can contribute to text classification tasks by identifying important entities that can serve as features or indicators for classification. For example, in sentiment analysis, recognizing person names or product names can provide valuable information for sentiment classification.
+          </li>
+        </ul>
+    
+        <p>
+          Here's an example to illustrate entity recognition:
+        </p>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Input Text: "Apple Inc. is planning to open a new store in New York."</p>
+            <p class="card-text">Recognized Entities: "Apple Inc." (ORGANIZATION), "New York" (LOCATION)</p>
+          </div>
+        </div>
+    
+        <div class="mt-4">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXYAAACHCAMAAAA1OYJfAAABs1BMVEX/////9fX/1dX/5+f29v//AAD4/fjV1f/6+vrm5v8AAADr+uvd993v7+8AAP/z8/P/7+/v7/+3t7f/+fmwsLD/7Oz8/P/Ozv/h4eHq6ur/z8//8/PNzc26urrAwMDe3v/V1dX/m5v/YWH/p6f/s7P/4eH/u7v/jIz/xsb/SUmlpaX/29v/wcH/fX0AnwDz8/9mZmb/W1v/a2v/QkL/GBj/j4//UlJYWP9wcHA1NTWIiIj/lpb/g4Pi9OL/OTn/KSnBwf+CgoKqqv+YmJhFRUWYz5jr4tLVwZ3z7uTAoWxFRf9jY/+VXwCiov9cXFz/JibezrS/Z//VoP/u2f/CpHCzjELLh/9sbP/I58h7e/+x3LHbr/8kJP+Kiv+Jy4m0tP8gICAuLv8+rT5WtVZtvm0rqivkw/+6WP/n0v+1Sf/Ww6PPk/+PzY9xcf/Uof9LS/+xO/+RAP+Zmf9Rt1Goi1bBsJKzjDrKf//EdP+4lVN2dAB3xHfeuP86O//Bo26/5L+nuKd7n3tnhWWKpoq5y7mlp4oaWRFRflEnYitzejuebQA3ajumJv8AkQDDw9VycoBRYlHh0jeIAAAa5UlEQVR4nO1diUMaSZd/grQNyCWHzSm33AIigoKKKB5J1CSaIB4xeCQxJnHibhI/x89kMt83szM7u/sn76tqvEFBMZoMvyTdVHW96upfvX79qvp1BaCBBhpooIEGGmiggQYaaKCBBhpooIEGGmiggQYaaKCBBhpooIG/OdQGgxp3QpdLS9MCgxC3LperQvHDfOm3aNwPi4DIHhEJQSiKewcGtSAcjEdFTjCI4iRVBh47v0+vM9+ymT8YDCIk1z0AgQgm7E6IeQD809DZA9DZD00GARD9x9tB6FGS4tpOBy9YWAMpk2+o/NUQcZKtyNjf2WT0x/yOKEkqIeLQurwC10BnNAo90eAAOLt7uoUQD0ZFfl5wr8CE1vYaKn8lqAepqRYZ7d54zO4h+h6wR20wSJKo4drAAMRt4BTG/NDpcARBKSpJFltbQ8A0aL8aBsjz0zMAaMiJpkedIBSkgsJpcsjQH09FomCMxgyeWCQS8UQEIOzm5ZgQU1iGdPE22/4dIxhEsz1tEA6i5scEYCMm3usO4HNTKzJMEyPk6EcLY8D8FMQ9kArycvkirB0AMt/AVWCMeO2DTnAS/6TfDupod3TAru6Mxb0xBwTj0QG3cMDuDYA90o32Zzra7eblCnuwI4Xlwq02/nuGy9+Emk5cdzDSJHosaqNRibmgVYMOs6lfT9PGQymGATTrDcted7DjuVxuZmZzjMfMTC43Ps4Cl+nr68tYbrt1Px7GczNjsxO7uxOzY2Obm0j3DMXm2CzN/Y/Z/zRZFbfdyB8K4zOzSOzYJtXrsmDHSa9MYKGZ8W/bth8TbG5s98MsEl5d6fHc5sSHic3cDbfqx8b42O7cbO3qizfH3ERD668EYliuQPmR+ObE7lhD6WtEjpBWwY5XCyY3O9dgvnoQuupkImYm6lbVj43xsbnZeqooO7M7MXPN++aHBxqX+nOET+aGylcGszk3ezP0sDM3VfN3j/GxD5s3aAxyuxN3l/hm1eONhUevPz5EfOL/fXr48fWjhQ2xSneTJ0ZDMHOT9QMxYBN3z69pfvzzo4cvXiDHCxsvHz9WqbqaCVQq1ePHLzcWXn/Cg5/ebohvhPzx2Qqkk0F/afJlZiY3XnFyoDrcMeJVG09evfr0aONx80Wk6roe//z64faL1xvN9T39+OzcOTZYMsUyNze3OztL5xlnyHTj7Ozu3IfdqqcKyiC3O3s3ZoXFP3969eL1y+qZVG28fvXiyYaqXg1gx86QPp5DwiuTy9AOISPYK2l+bm7stolvfvnkxcO3j2u3G10br1+8ePu4Hm3YnDtpXsiUQFWziExu85+7E5tXUfvTZ/zm2Pj06slG15XFVQufXr2+LvMzc2PHOouj04nNWqYExjdnK42t0mVzeT1nZ3fHIV3SeeabxtS8/Lj95Nraqvv54au317A248eWlp2Z+HClWZjc7IcyzDOhcpZEunooNLdZLHVMYbVMwZuB6tGrTy9Lvzueon1/1wXN947M+9CDo5IObzzuLRv9VkLXwqtPG1dsxpFRR86vM47MzZ6bbMzvkC2TzyP70oM02eQZZnmVwSw8kM6P/aMksTwKaenBNzD3Gw9fLByraMsiwBu5GB7Mo63ns+afHR2NO4VCF4D6ovoef3zx9gq+DT7bSj+QtXGlo5MEgjkdDieJ73LZUm4AIyb9ZYW1pUgB4OPuSL/NnKRulIRsMMXltT3Ir4+ut+JmbY8p7rVi1hYUils7q7v86Xda06G9vZ3a218bft7+eMq4iOXQsr/f0SxXiSf37+mg903vvrhjUkwPqmN0F+0ecEFnKiasUGfX2+3XNRLPEPsK/IQA6p0h1hOI20Er6rf1xAwQiNnc3iAEpm3904Zy4u5o6cf6oRHHQe4JF2X1ADd7o3hcWsxDPi3NSws7UJQuLzPpdSYkJUo+RlrArDNoZtLrtbW+RjS/3X5y5iGqWoR3Q70t75fgeTvMPxDLW1TP20usg1+ENsYZ7AePFwYdF+n8wvbrWp7OMx+oN4EeO50QaKIhjN0GGrcbdDSJsIONcei0Adh6wGhLeZBpov9O8kvY40yVIk2l69DaOjrKlCo9nHghxNIuYdZbQyRjbXVrZwsNfnF1dXUvj+Z8DW1NDhuRLsLeARys1dD2WtH1+tV5a6BabJ+Ee8PPu9p7AYaXhuahRS4/tDLuiF8gcMXUIBzQDlxS+8KrqjWenf0nISr3z8OxKQ1DQr77owaDY1poC2JPYCfHUwGHVwjdDkHMFYj4ve7OqCBuMA66bSIBL4gMru7kdw7DkWZ2eeLTlOtiK4yuMiHsG6LN63ksjA/SwkFrEQuQfmEmxgp7pHf2bi6eSfd2e6GMh968+G4I5ieX4Bka996hpWcw3IsdwSOF6gZKtDSOqMB+6QkWtheqakmOOs5I0dFzsKefbO2BeLAzllJC1AHugYEgiFKdQW8TuN2OaZdg2qk1iNyeoK0fC4uUvCDa8FCaxN8dAmvF/joIFYtIc3FnlYGtYvEA1nbW0MCHDvLrO2sMrBbXSlGSm/8oMNglO+X9zTpgYftR+WHRImr5klwF4sVn8+8Azcu9Idhv5491U8Pa3e8QKfttl5+j68l2FU4ptamnZ2IdJIRRKRLGlCAYJGqPSVtKSJ4s3oDT63aK1EpX1OsesNlsrrgAXKVIUyRcun7CwBPMfBgj0WEsQ2PEEAwxY/SXlD3MOiqd+3CTszQb268rjUWfoR1vITSLHwyh86iDoS5o6eCPuUmoG6gdTiMYKj1PT0H84skllmaceBBnp7+1Io/a1e1wEZ67neCZFqpdgx53xCgMiJRRJ/R0o7lXi5wD4PfivaCOp3g5Zl2KZlkaOn2KsQ9VDEOzGUQfC+M3N2YVP/wkrk2CMxFcJchq4dXLiw7PzI2T+aizTroh7vUi3YTNAGq+ozsed4AjHonHDeCKR3tS4IzYnWDz2gUgjEc7S+4Ns8oUDiB9NsB3fPbyuXWZnoD8mhir+uJqwuuLmSgHk49AdpWzqV48qXxwdhbGJ8pyor4weUn2ORwNCiqB0XOcjNEdNqr+2Nh+ewO1XoRHryrcW+SGPjvfeDWw4RHE1AUlxuYqKrzs85dfvnz9/Pnrly+/fObQ8m/u1qFJp9D88UXdpmirxsvtsrdXbi438+1m/8Z3yyu89euXX49uY/bXr1++ytD/qe/rxI1X1fl0dYaq3GnHJnK7Y/W9vIsxtnte4a2/fOXOZJm+fMZHTj0bdhuqzuPh67M5E7OzZWi4UeTOuTSfv5RzE379zZqrH++Pqxy+3Ag+fjyVHJ+r9Lr0RrF76mkp++XXCuW+fM7N6c/eBlfD2xc1eo31xZOTDk3uw4fZW4n53zxxh1l/q0zs58//+vfnOpxP9/DJjUZYXI4nxM7wg6eZ+zc6GLwIx8NQ7pcLZtVlv/3++7/g2p89Pd7++XoV1AGfFnSfqIkfuz97e1GI48TA41BB/9sFlP76++9//vlfYzAzca1zLVRynb8ldNs//fQI97N/3G50ysTY7v0c85v+giLpr3/+/vvn2d37c9c50ZOHt2xgCB4//Omnn56AYnei2rHlDYH54/79sS+XTDIyn//8unv//h9Xvy2bX5zz3m4DCz9R2nObt9wOBtm8v1vJhzlGDnvnGrSLt6/6TrnO0C38908XzM98K8zsIp9/VFFwfHPu/v2rDi2aq5nz/kbQLTy67SZQ5MoNWMsWvPonDXWOUGyggQb+LtCBjrqFukMrcm6aS0fexWEh/k+FQofAsTqrgPIj9vO5Vb7xUJf1FY8ym85m1ISTUk1nD7LlXJAL4hsZ3qFkLh2WDr27t3SvHeBZL58eXjxbYliOZKvmJ5/B0PMlnvdn8goevC87YvFNJZJlWqvIZsKnsxWJxOkiwp7ytfakymQ29XdHU1EHeUnNx/U5B86xdgxluSoo+AXEKDzeswcTvlPJPULnaOhsqWNs8QtbLW+dyJOukbCm1tXRUyUnH8CQXAy6UhyQWH62KtUi4XgIt0vDpayuCrSbwmBa0SvM5bQ9Y4a2k2mrFdrCp4v0i8oT11Q2W4h0a71k6SM+rT0h7TSeKewQVXpZbiypu5r04NmDilOKkv6LxHCkL6BdygeCndb21r/I/XEmVqn3AVLdAmLUeNWz4WbVoupBC7I8PARdQx14bHiY0t6+CO8J67qhB+3QLFfhVtUufl8KBgC2zWcFWd+U1Spp0yssAJwGSbb6TCCzcD5sPDeS5TBtxl9WswlAv+KTmcNcFi2SRsNfnDrodZAlL/0em9pgQwoCNi0IDYGAUICa6MBNwOEBo0Fpo2FEWqLlQpFH7VGDwOGEpmmlAYWUTicYYoEmKu1yuvlOiUZI0IzR6fSDwekm1Xkw7Xa4QCAErdOhhVREoDXQCEkhntRlo3JWDvQmfbY0x7i8vFqiPT16AFKplEkzzMFoGpi8FLeQLhSKTDp/kE9jVmH0aAS7g4qeL5zMQdqXOu7Ng+5NL6juiZfuqeTDDxZ1S0vN8o4h+fv59nsqamSQ9nkasru01CXvaJYPD8ubh+XvHzwvqX3CxCVNihLtWQlwYcVU1qLRS0wWSTah4Gm39Cn6EpBIZrOEdo3MnDQnEmxGluGNjdvgnkbavFFP3O4ORqHTH5g2pqZtnfEU2BwukSvVoxQJ3SKbI9Z0SDt097hFRk+3OuJUx1J2kaApqAwGBaJAE5HWRqGf0AuegIeEbUSNAZurE6Jqm8MYsUHQ4xEJYm4QuZxeSNkFqW5Q2/2CmL8z5kyRhcRQNyAr8WWTvCovM6E0pT0/Ki0WpOt76R1mtSANSUdDhdF1yO8xW0Vmb310a2eLhIsdhUAehBhYlp7MQdrne+/hbqgX3r9HBVbJQbfY1d7RstiukzfD06GSkWmXv5uk+44WeYsOe2JR3IUH5PzD1TQFkJ2CNuRvRY+thbAFOG7KZ04mWAl/nikLJPGQRK/hSV7hiJGxjpgT5j4JtUp2pYuEw/X0g9sOhgFlt9spMnjiALZONfaHp8kgNIj8TcjfoPCIduwSkVJoEEZs6pgS0NgH3SlRU0wtHEDpQMzGGyi7UhgLAHiD2iaDKGBsmlaDQSQYwPsH7G5wG23TJJjJ4AVnEDsnJfCCa5DIZXzArQArobfjaJ5ZXaa0r40erJLQUrT1eWk+JE2vAxMiUWBoZApoTUa34IApHBkjZv2AWQZU9xPx8b3DOvkQpZ2qM9LevNjVMd8xSWl/3nJI+2Jz7z7a/5Z58T6l/blYdUy7ZgSpT/K0c4T2pIkwSzwVxRHtrARv1hXrIe3UtptGsodPLUPQ4bBHgYSGIu2CbhcN1HNHCO1auiKjICgc9BtjoD6mvUnkhJiyKWjoRNqbwGCnkdXGmNpApf1eGn7qx6qj2H/GqAhJjsVdIiMYSVwSuQPceCsZBgntyHYPNsBhR/79lPY+pD2Jl0BDwNYKo1tIHNK+yluL5SJq8rKU0i4NkcjUY9oLy63Hz4DRYqEVc06uWdtLHqkqGLoH7/d18Ey8iNque94O++2E3Mn3JHqX0o5FJ7tIPzzHIwDPVZT2LqoIVokMNBkgjEp4bUf1b0v6gLWc0PYRHyiS7LG2m4m2t2GPWYi2BymVQugp0a4UucDvIssFOjrVSJffP+iHaYGRaLuWlsXnZs+gGmLqVD+k+lHFkUAHsutWxtR+lHZ5DNBJqu0kNh8z3BDoNhih2y3ygMvrxy7xaKMBfwwM0yXaA3hbdToM8ZK287Tzl3BAPh0oFijt6KkcoLne2wLsh1Ca1/b1AqV9D2keJbGpeKj0RJaGVkmUmZRqO3VK2+VPVTD/vGVpUdW1v987NCTvaJcPLS2+338zJEefUf7sPbkZupZw2yJfHJp//n5/vl3e0iJ/xhcdyZCKs1OWjEIRTnImiUbRJrFykpEpziKZGsENXeKMk2RkXLKtz4K2nc5Rh0esfUlZVsIlk1No68E5jVy6RFFtJKruHDDaRNqgyB5tSsWEantc7RDZgxActA2mPCK/AFUcmhyifkfULgSPyBMQdUYHtPEeZ0ptjA1EHDBgVxJpYbe7Bx+TgZiLPHzjyrjD4fTEPcGmwEAg6IeUKNKjHExpY9F+tGYimw17Jhp0B6E/pnTgb1CMJEAjwUswkeWV0Y1hdkLpQijdGlrdySPX+b8Kq8XR0ChmHfzVWggdLIfye+tSZnWVKe6gwfclSz7d3gFgzlaIxACHydWqVKpm0KnornlIDF2qLvwLKp1O16VCC9Iy3NGOIylSAshnvDr+CBZSdakwo8vEh/PoORZYmUwhk8nIDh0YGXFn9IA55LiCZLJWBS1EMlgZ0OKsoo0YJFCSVQHJ2oBKpZr+bQKPW02ySRIE5NGoxJFTkxILkXUElUYtXTPQqDQSLxCl/cT2GJ0GssggPgvQYVFrm2jVmCT1qolgkxZdRqWAHDAYgGRhaSPxJGkTyKLiStIKI2kjNk9Gm45OIQ07pUCfJU2XKaRLFTKlbGgtpPOMlGFYKcMvYsglSj4QL8u/3LPW5aW2yVSPWn5M6DU3VvWVQhr/JriAm+ZroY6v+dRNdwvnpniYmlFWkGZ1tLdcB0N1Y13oEdwtuM80UJpvrRGlz0FOZ/JfAXZcL7Cu/VrSJyG86EPV24DgTFpa85fVrczJ3alqytMu7ugQo5fTjujAG6K9pVLn1JH2qj7sKA93BIf6IEwFg8RfxPFOxHH9Bl1Ge5qfUmxdW90jo6f82urWmflewjdK0d3BAR1iSQ9w4AQVaBfL59+8m4el/Tdvnj5oXnz65qm8Ar93gvZo3OCPBMEZ9wScIiXYowJBdxUfRV2Cy2jP0w/E8qEC8eThYD2f3jvzyTvhe3SZ7PKhveX1UTI7s7wcIryXpf3ZU9zIVft0frFlHzfvl8q37S7Q7qSfeomUQTIvIBI6ySRWpan7GlAd7UUydh1dg3VC5hl1P6KdoVSH8mQqTUrXIyhL+9IDgKHnKnl7R0sLPLsnFrcsDpVv212g3U5fVAwKvEGbIxIFrwe0LuEFrzyqRFW086s/pEPSUJk3O4e0QyvtodFlInKBbX+3ODm5j+P/p/fuPYX5d08XeyvRexdojxN7rha5Bp2OGLofg37oj8Sub9xro339Itrz1PocrJF9Zdqb5WIxZg+/oanJFmiZPF+Ix12gPUqXc/D6vbhFA9NN+PJ6rt2gGowM2g1qZIqnY/Mo7VtIO7/6wPIy2Uvpo7gc7S38+9Q3w0DmXxa76DRledwF2gWigNYRU9pSZBUJAzgG/EJbhdeDNVV7Jn2O9vWDgwKTDx1I+UdqWnp2SQ1e25lWKZ2ybMVSxQJ5tQrlaSdfrAPoeiffvZt830HebQ+9q9C2u0A7CKLxlBboazryws4ZiXRW+E/yaqr1TPqcA7m3t7eWhvTazhp1IFd3yjmQhfXielHKrBVX1/G+kO7skE/ny9POh3CAjh/900SloLA7QfvNoD7DJYZh6HBJKuX7RNrK2/YW8XUwdN2LO4JQILxbCJxpIBJWI0rLJ7WmT2bytOsupvV//ld14fE6frN32zSfxbnJikrs/t/nSkd4OYZPJD6fzLwYbH0+NPuRoZdc9N32EWSSkerr5HyXl/mbo08isVZRzCeRVP9CSN92eZm/NxQSiSR8eTE2WVWxw0obr+wuAWqxRHLRh2M8zKRY1Raby16rTT8+iBZLJJlLy41UV+yo2uu06W8AVuNL9Pku/W/3WJ8vnL282CGs1XfQt4I+kUhkLMAlyB5MN/dyvlrIqlPNWj7TV1iv1JKbhHnEarJION8UWQELMrdvBbPVKXHGWn2Vd8S2y/qyIxrgpkayNECORFAm+Isduf1nvqI6bdfXYK/1d+M/C7VIrNakYsXKJq0wkshmp8KQDGcyGZli5XIn4qaRra7ns9bqq5TdDdqzWTCFNficyWjYFbM52Qb6FYvFYiaBobcOrroILVMNgVx3xMhMmcCXzeLTM2m1kgjhJFj4EbkmcYnkN4ClOnfcVMN9yd6JWDs2qYewxZLk+kZ4oldM2bDJZDFBIoPbW3ZyNdaqimVrmN66Gw4ki3qukYGZfDhHPnwCi9nch6Y9C74+usrorUJWnWtYSytZjhRn6Z+LdixbRaELK7isUKndx5sTP2qpp0yja5AsU/ZGHMikLGsyZfRhRcZi6eOm2ISlrY8LQ8LU1oeZCauvz5pQJLisz5qQhTmfhu6yGhPZ9bWZ+liUNFmwAj1KZmRTMpTMEkmT2cdhptXn4ytASTbB9aGkAiV9pAJFFs8pC8vIObGCDJWUZUzmLBeWhU14Tjymz/o4Ipn1mcIoibsMTHF9FlOfYkrfRySn9BkLPSeR1OMlWDVZ6xSEraS1LDYaK1BMlS5Blm2zoIiMSHJTsozFnOElsSG4y5J6UJKI8JL6cJUubJWjKgrF3fBkfgTU4kA2ZiDrhlo8GX3jNUe98P05kD8EanEgub6ba8ffDLU8UmuarmzgImRqeEzexVfY5KtKfoc/2O9GL2qZgbyD8+1WSTK5EgY2iVjhNN+NFeyzVl/2rjiQLHBkYSay8dFJGSu3Qg8kbv/tUpX4Hh3IkXBiRcYlE0krIZrlJPq2MKtQsJD8buKnLN+fAymTWGGES5rIfO/IyEhyygKZFdxrFCvfjW2vZZR6RxxI0xQoktYk+aFYYekSXiMmMi9lqiHC7ZZRyyP1jjiQvixYp8ibpISPLC3BSRSEfUT2bqhFNchYqy97R94uJSxkuZowArLkDcBU1irBxJR+KhkOJ+6GalyGmmYgrTfWjFrALy8JHFd6qaCQsXoOAXqyu+3WVYdaHEhZFswKE6e3sG0KkxV3GoWF4ywKDUt2mGnRcxZ9G2vWW02yNjDLrCYFSZkwxbbpiQi00QoUWNZKJBW8JKmAluV4yVIFKKnnJWVmRemcbfw5ST2HkhaFGV0DPJmZtRyek1SgaMOd3sy2yUqSJitnZvlTl86JKfPxqXFH68FMvgIzOaf5lCRNHZ6alrWclOQvV0PabpXRyyUVaEgFh60lFWhq8E6wUg25gjbCNzZAcbzjShxaLXoN21ba0QbQHaY0uOPMcCgiO9yRdhx1XxtnsmCbNeSiye5IUt+moE0/d05yIeYjSUo0SRG+NQpeEiuwHDX6sO0sSlrpqUlrZbTRfGtJBbykhnb1oUib4rgCrlSBlZ7zpGTpcoE/J9DrJLSdODVte833RwMN/Aj4fzuGmQzwEQ/hAAAAAElFTkSuQmCC" alt="Entity Recognition Illustration" class="img-fluid">
+        </div>
+      </div>
+    </section>
+    <section id="keyword-extraction">
+      <h4>1.4 Keyword Extraction</h4>
+      <div class="container mt-5">
+        <!-- <h2>1.4 Keyword Extraction</h2> -->
+        <p>
+          Keyword Extraction is the process of identifying the most relevant and important words or phrases from a text. Keywords represent the main topics or themes discussed in the text and can provide a summary or highlight the key points. Here are some principles of keyword extraction:
+        </p>
+        <ul>
+          <li>
+            <strong>Term frequency:</strong> Keyword extraction often relies on the frequency of terms in the text. Words that occur more frequently are considered more important and likely to be keywords.
+          </li>
+          <li>
+            <strong>TF-IDF:</strong> Term Frequency-Inverse Document Frequency (TF-IDF) is a popular technique used for keyword extraction. It takes into account both the term frequency in the current document and the inverse document frequency across a collection of documents to identify significant words.
+          </li>
+          <li>
+            <strong>Graph-based algorithms:</strong> Graph-based algorithms, such as TextRank or YAKE, construct a graph representation of the text, where words or phrases are nodes, and the edges represent their relationships. The importance of a word is determined by its centrality within the graph.
+          </li>
+        </ul>
+    
+        <p>
+          Keyword extraction has various applications in natural language processing and text analysis. Some of the key applications include:
+        </p>
+        <ul>
+          <li>
+            <strong>Information retrieval:</strong> Keyword extraction can help improve information retrieval systems by indexing documents based on their keywords. It enables efficient searching and retrieval of relevant documents based on user queries.
+          </li>
+          <li>
+            <strong>Text summarization:</strong> Extracting keywords from a text can provide a summary or overview of the main topics discussed. This is particularly useful for generating automatic summaries or extracting key points from lengthy documents.
+          </li>
+          <li>
+            <strong>Content analysis:</strong> Keyword extraction is valuable for analyzing large collections of text, such as social media data or customer reviews. It helps identify the most frequently mentioned topics, enabling businesses to gain insights from unstructured textual data.
+          </li>
+        </ul>
+    
+        <p>
+          Here's an example to illustrate keyword extraction:
+        </p>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Input Text: "Natural Language Processing (NLP) is a subfield of artificial intelligence that focuses on the interaction between computers and humans."</p>
+            <p class="card-text">Extracted Keywords: "Natural Language Processing", "subfield", "artificial intelligence", "interaction", "computers", "humans"</p>
+          </div>
+        </div>
+    
+        <div class="mt-4">
+          <img src="https://www.researchgate.net/profile/Bernard-Renger/publication/228606874/figure/fig4/AS:302058008793092@1449027649884/Illustration-of-Keyword-Extraction.png" alt="Keyword Extraction Illustration" class="img-fluid">
+        </div>
+      </div>
+    </section>
+    <section id="useless-word-filtering">
+      <h4>1.5 Useless Word Filtering</h4>
+      <div class="container mt-5">
+        <!-- <h2>1.4 Useless Word Filtering</h2> -->
+        <p>
+          Useless Word Filtering, also known as Stop Word Filtering, is the process of removing common words that do not carry significant meaning in a text. These words, often referred to as stop words, include common articles, prepositions, pronouns, and other frequently occurring words that do not contribute to the core content or the overall understanding of the text. Here are some principles of useless word filtering:
+        </p>
+        <ul>
+          <li>
+            <strong>Predefined lists:</strong> Stop words can be filtered based on predefined lists of commonly occurring words. These lists are language-specific and contain words that are considered non-informative in most contexts.
+          </li>
+          <li>
+            <strong>Contextual filtering:</strong> Useless word filtering can be performed by considering the specific context or domain of the text. Certain words that might be considered stop words in general might have significance in certain domains, and vice versa.
+          </li>
+          <li>
+            <strong>Customization:</strong> Users have the flexibility to customize the list of stop words based on their specific requirements or domain knowledge. This allows for better adaptation to the particular text analysis task.
+          </li>
+        </ul>
+    
+        <p>
+          Useless word filtering has various applications in natural language processing and text analysis. Some of the key applications include:
+        </p>
+        <ul>
+          <li>
+            <strong>Text mining:</strong> Useless word filtering is crucial in text mining tasks such as document clustering, topic modeling, and sentiment analysis. By removing non-informative words, it helps in focusing on the meaningful content and extracting key insights from text data.
+          </li>
+          <li>
+            <strong>Search engine optimization (SEO):</strong> Filtering stop words can improve search engine optimization by reducing the noise and improving the relevance of indexed content. It helps search engines better understand the main keywords and topics of a webpage.
+          </li>
+          <li>
+            <strong>Information retrieval:</strong> Useless word filtering improves the efficiency and effectiveness of information retrieval systems by eliminating common words that do not contribute to the retrieval process. This results in more accurate and targeted search results.
+          </li>
+        </ul>
+    
+        <p>
+          Here's an example to illustrate useless word filtering:
+        </p>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Input Text: "The quick brown fox jumps over the lazy dog."</p>
+            <p class="card-text">Filtered Text: "quick brown fox jumps lazy dog."</p>
+          </div>
+        </div>
+    
+        <!-- <div class="mt-4">
+          <img src="useless-word-filtering-illustration.png" alt="Useless Word Filtering Illustration" class="img-fluid">
+        </div> -->
+      </div>
+    </section>
+  </div>
+
+  <div id="sentence" class="container mt-5">
+    <h2>Sentence</h2>
+    <section id="semantic-analysis">
+      <h4>2.1 Semantic Analysis</h4>
+      <div class="container mt-5">
+        <!-- <h2>2.1 Semantic Analysis</h2> -->
+        <p>
+          Semantic Analysis, also known as Textual Meaning Extraction, is the process of understanding the meaning of text and extracting the underlying semantic information. It goes beyond syntactic analysis (grammar and sentence structure) to capture the deeper meaning and intent of the text. Here are some principles of semantic analysis:
+        </p>
+        <ul>
+          <li>
+            <strong>Semantic representation:</strong> Semantic analysis aims to represent the meaning of text in a structured form that can be understood by machines. This representation can involve various techniques such as semantic networks, ontologies, or vector representations.
+          </li>
+          <li>
+            <strong>Semantic similarity:</strong> Semantic analysis enables the calculation of similarity between words, phrases, or documents based on their meaning. Similarity measures, such as cosine similarity or word embeddings, can help in tasks like information retrieval, question answering, and text classification.
+          </li>
+          <li>
+            <strong>Contextual understanding:</strong> Semantic analysis takes into account the context of the text to capture the nuanced meaning of words and phrases. Understanding contextual cues, such as word sense disambiguation or co-reference resolution, is essential for accurate semantic analysis.
+          </li>
+        </ul>
+    
+        <p>
+          Semantic analysis has various applications in natural language processing and text analysis. Some of the key applications include:
+        </p>
+        <ul>
+          <li>
+            <strong>Information extraction:</strong> Semantic analysis helps extract structured information from unstructured text. It can identify and extract entities, relationships, events, and other meaningful elements from text data, enabling structured storage and analysis.
+          </li>
+          <li>
+            <strong>Question answering:</strong> Semantic analysis plays a vital role in question answering systems by understanding the semantics of user queries and matching them with relevant information in the knowledge base. It helps in retrieving precise and relevant answers to user questions.
+          </li>
+          <li>
+            <strong>Chatbots and virtual assistants:</strong> Semantic analysis enables chatbots and virtual assistants to understand and respond to user queries in a human-like manner. It helps in understanding user intents, extracting key information, and generating appropriate responses.
+          </li>
+        </ul>
+    
+        <p>
+          Here's an example to illustrate semantic analysis:
+        </p>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Input Text: "I need to book a flight from New York to San Francisco."</p>
+            <p class="card-text">Semantic Analysis: Extracted entities - "flight," "New York," "San Francisco"</p>
+          </div>
+        </div>
+    
+        <div class="mt-4">
+          <img src="https://d3i71xaburhd42.cloudfront.net/7b9b60891fc9e4a3c46864614ec62a085e2c435a/3-Figure1-1.png" alt="Semantic Analysis Illustration" class="img-fluid">
+        </div>
+      </div>
+    </section>
+    <section id="text-similarity">
+      <h4>2.2 Text Similarity (Word2Vec)</h4>
+      <div class="container mt-5">
+        <p>
+          Text Similarity using Word2Vec is a technique in natural language processing that measures the semantic similarity between two pieces of text based on the distributional similarity of words in a high-dimensional space. Word2Vec is a popular word embedding model that captures the semantic relationships between words. Here are some principles of text similarity using Word2Vec:
+        </p>
+        <ul>
+          <li>
+            <strong>Word embeddings:</strong> Word2Vec represents words as dense vectors in a high-dimensional space, where similar words are located closer to each other. It captures the contextual meaning of words based on their co-occurrence patterns in a given corpus.
+          </li>
+          <li>
+            <strong>Vector similarity:</strong> Text similarity is computed by measuring the similarity between the word vectors of the words in the text. Similarity measures such as cosine similarity or Euclidean distance are commonly used to determine the similarity score.
+          </li>
+          <li>
+            <strong>Contextual understanding:</strong> Word2Vec takes into account the surrounding words and context while learning word embeddings. It captures the contextual meaning and semantic relationships between words, allowing for more accurate text similarity computations.
+          </li>
+        </ul>
+    
+        <p>
+          Text similarity using Word2Vec has various applications in natural language processing and text analysis. Some of the key applications include:
+        </p>
+        <ul>
+          <li>
+            <strong>Information retrieval:</strong> Text similarity is used in search engines to find relevant documents or webpages based on the similarity of their content to a given query. It helps in retrieving documents that are semantically similar to the user's search intent.
+          </li>
+          <li>
+            <strong>Recommendation systems:</strong> Text similarity is employed in recommendation systems to suggest similar items or content to users. By measuring the similarity between user preferences and item descriptions, it helps in generating personalized recommendations.
+          </li>
+          <li>
+            <strong>Plagiarism detection:</strong> Text similarity is utilized in plagiarism detection systems to identify cases where a piece of text is similar or identical to another existing text. It helps in detecting instances of academic or content plagiarism.
+          </li>
+        </ul>
+    
+        <p>
+          Here's an example to illustrate text similarity using Word2Vec:
+        </p>
+        <div class="card">
+          <div class="card-body">
+            <p class="card-text">Text 1: "I enjoy playing football in the park."</p>
+            <p class="card-text">Text 2: "I love playing soccer at the park."</p>
+            <p class="card-text">Similarity Score: 0.87</p>
+          </div>
+        </div>
+    
+        <div class="mt-4">
+          <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*xD9n3KeWXuenMNL_BpYp6A.png" alt="Text Similarity (Word2Vec) Illustration" class="img-fluid">
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
