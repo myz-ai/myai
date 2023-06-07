@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RNN Introduction</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">RNN Introduction</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#overview">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#working-principle">Working Principle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lstm">LSTM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gru">GRU</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#applications">Applications</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="overview">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Overview</h2>
+            <p class="card-text">Recurrent Neural Network (RNN) is a deep learning algorithm widely used in sequence data processing tasks. It leverages its recurrent structure to model temporal information in the data, making it suitable for natural language processing, speech recognition, time series prediction, and more.</p>
+            <p class="card-text">RNN is inspired by the biological neural circuitry and exhibits a certain level of memory when processing sequences. Unlike traditional neural networks, RNN receives an input and the hidden state from the previous time step at each time step and computes the current hidden state. The hidden state can be seen as the network's encoding or memory of past information. Then, based on the current hidden state, RNN generates an output and updates the hidden state, passing it to the next time step.</p>
+            <a href="#working-principle" class="btn btn-primary">Learn about the Working Principle</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="working-principle">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Working Principle</h2>
+            <p class="card-text">The key to RNN is its recurrent structure, which allows information to be propagated and retained within the network. RNN consists of a hidden state and an output layer.</p>
+            <p class="card-text">At each time step, RNN takes an input and the hidden state from the previous time step as input and computes the current hidden state. The hidden state can be considered as the network's encoding or memory
+
+ of past information. Then, based on the current hidden state, RNN produces an output and updates the hidden state, which is then passed to the next time step.</p>
+            <img src="https://stanford.edu/~shervine/teaching/cs-230/illustrations/description-block-rnn-ltr.png?74e25518f882f8758439bcb3637715e5" alt="RNN Diagram" class="img-fluid">
+
+
+            <p class="card-text">The hidden state in RNN is recurrently passed through the network, allowing the network to process each element in the sequence while maintaining the continuity of context information. This memory capability makes RNN suitable for handling sequence data with long-term dependencies.</p>
+            <p class="card-text">In addition to the standard RNN, there are variants based on RNN, such as Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU), which improve the modeling capability of long-term dependencies by introducing gating mechanisms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lstm">
+        <div class="container">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Long Short-Term Memory (LSTM)</h2>
+              <p class="card-text">LSTM is a type of RNN architecture that addresses the vanishing gradient problem and allows the network to learn long-term dependencies effectively. It introduces memory cells and three gating mechanisms: the input gate, forget gate, and output gate.</p>
+              <p class="card-text">The input gate determines which information should be stored in the memory cell, while the forget gate controls the information to forget from the memory cell. The output gate regulates the output based on the current hidden state and the memory cell.</p>
+              <p class="card-text">By selectively updating and forgetting information, LSTM can retain relevant information over long sequences, making it well-suited for tasks involving long-term dependencies, such as speech recognition, language modeling, and sentiment analysis.</p>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/LSTM_Cell.svg/1200px-LSTM_Cell.svg.png" alt="LSTM Diagram" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gru">
+        <div class="container">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Gated Recurrent Unit (GRU)</h2>
+              <p class="card-text">GRU is another variant of RNN that addresses the vanishing gradient problem and captures long-term dependencies. It simplifies the LSTM architecture by combining the forget and input gates into an update gate and merging the cell state and hidden state.</p>
+              <p class="card-text">The update gate controls the amount of old information to retain and the amount of new information to incorporate. GRU also introduces a reset gate, which determines the extent to which the past information should be ignored.</p>
+              <p class="card-text">By using fewer gating mechanisms than LSTM, GRU simplifies the network architecture and reduces computational complexity. It performs well in tasks requiring modeling of long-term dependencies, such as machine translation, speech recognition, and video analysis.</p>
+              <img src="https://miro.medium.com/v2/resize:fit:1400/1*RiOzdOVaaeKrUotY7-1a2A.png" alt="GRU Diagram" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="differences" >
+        <div class="container " style="padding-top:10px">
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h2 class="card-title">Differences and Advantages</h2>
+    
+                   
+                        <ul class="card-text">
+                            <h3>LSTM (Long Short-Term Memory)</h3>
+                            <li>LSTM addresses the vanishing gradient problem and enables the modeling of long-term dependencies effectively.</li>
+                            <li>It introduces memory cells and three gating mechanisms (input gate, forget gate, and output gate) to control information flow.</li>
+                            <li>LSTM is well-suited for tasks involving long-term dependencies, such as speech recognition, language modeling, and sentiment analysis.</li>
+                          </ul>
+    
+                          <ul class="card-text">
+                            <h3 >GRU (Gated Recurrent Unit)</h3>
+                            <li>GRU simplifies the LSTM architecture by combining the forget and input gates into an update gate and merging the cell state and hidden state.</li>
+                            <li>It introduces a reset gate to determine the extent to which past information should be ignored.</li>
+                            <li>GRU offers a simpler network architecture and reduced computational complexity compared to LSTM.</li>
+                            <li>It performs well in tasks requiring modeling of long-term dependencies, such as machine translation, speech recognition, and video analysis.</li>
+                          </ul>
+    
+                          <ul class="card-text">
+                            <h3 >RNN (Recurrent Neural Network)</h3>
+                            <li>RNN is the most basic form of the recurrent neural network architecture.</li>
+                            <li>It receives an input and the hidden state from the previous time step at each time step and computes the current hidden state.</li>
+                            <li>RNN exhibits memory capabilities and is suitable for sequence data processing tasks.</li>
+                            <li>However, it can suffer from the vanishing gradient problem, limiting its ability to capture long-term dependencies.</li>
+                          </ul>
+                          <img src="http://dprogrammer.org/wp-content/uploads/2019/04/RNN-vs-LSTM-vs-GRU-1024x308.png" alt="GRU Diagram" class="img-fluid">
+                </div>
+
+            </div>
+      
+          
+           
+            <!-- </div> -->
+          </div>
+ 
+        
+        </div>
+      </section>
+    <section id="applications">
+      <div class="container">
+        <h2>Applications</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/karpathy/char-rnn" target="_blank">Text Generation with RNN</a>
+          </li>
+          <li>
+            <a href="https://github
+
+.com/llSourcell/How_to_make_a_text_summarizer" target="_blank">Text Summarization with RNN</a>
+          </li>
+          <li>
+            <a href="https://github.com/google/seq2seq" target="_blank">Machine Translation with RNN</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
