@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformer Introduction</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Transformer Introduction</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#overview">Overview</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#working-principle">Working Principle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#applications">Applications</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="overview">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Overview</h2>
+            <p class="card-text">The Transformer architecture consists of an encoder-decoder structure. The encoder processes the input sequence by applying multiple layers of self-attention and feed-forward neural networks. Each layer in the encoder attends to all positions in the previous layer, allowing the model to capture both local and global dependencies. The self-attention mechanism assigns weights to different elements in the input sequence based on their relevance to each other, enabling the model to focus on important information.
+
+                The decoder, on the other hand, takes the encoded representation from the encoder and generates the output sequence step by step. It also utilizes self-attention layers along with encoder-decoder attention layers. The encoder-decoder attention allows the decoder to attend to different parts of the input sequence while generating the output, enabling the model to capture the context and dependencies between the input and output.
+                
+                One of the significant advantages of the Transformer architecture is its ability to parallelize computations. Unlike recurrent models that process input sequentially, Transformer can process all elements in the sequence simultaneously, making it highly efficient for training and inference on modern hardware.
+                
+                The Transformer architecture, with its self-attention mechanism and parallel processing capabilities, has achieved remarkable success in various natural language processing tasks such as machine translation, language modeling, text generation, and question answering. It has become the foundation for many state-of-the-art models and has greatly advanced the field of deep learning in natural language processing.</p>
+            <p class="card-text">
+                Self-attention is a crucial component of the Transformer architecture that enables the model to capture dependencies and relationships among input elements effectively. It allows the model to assign different weights or attention scores to each element in the input sequence, indicating its importance for making predictions.
+
+In self-attention, the input sequence is transformed into three different representations: query, key, and value. These representations are obtained by applying linear transformations to the input. The attention mechanism then computes the attention scores between each query and key pair, indicating how much attention should be given to each element.
+
+The attention scores are computed using a similarity function, such as dot product or scaled dot product, followed by a softmax operation to obtain a probability distribution over the keys. The values corresponding to the keys are then weighted by their attention scores and summed up to produce the final output.
+
+By allowing the model to attend to different parts of the input sequence, self-attention enables the Transformer to capture long-range dependencies and contextual information efficiently. It overcomes the limitations of recurrent models that process input sequentially and may struggle with long-term dependencies.
+
+The parallel processing nature of the Transformer architecture further enhances its efficiency. Since self-attention does not depend on the order of input elements, the Transformer can process the entire sequence in parallel, making it highly suitable for both training and inference on modern hardware, such as GPUs.
+
+The combination of self-attention, parallel processing, and multiple layers of the Transformer architecture has led to significant advancements in natural language processing tasks, including machine translation, text generation, sentiment analysis, and more. The Transformer has become a foundational model in the field and continues to inspire further research and innovation.
+            </p>
+            <a href="#working-principle" class="btn btn-primary">Learn about the Working Principle</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="working-principle">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Working Principle</h2>
+            <p class="card-text">
+                The key component of the Transformer architecture is the self-attention mechanism. It allows the model to focus on different parts of the input sequence to capture dependencies and relationships effectively.
+
+In self-attention, each input element is associated with three vectors: Query (Q), Key (K), and Value (V). The attention score between two elements is calculated as the dot product of the Query and Key vectors, divided by the square root of the dimension of the vectors. This score determines the importance or relevance of one element to another. The attention scores are then scaled using the softmax function to obtain weights. These weights are used to linearly combine the Value vectors, producing the final output of the self-attention mechanism.
+
+The self-attention mechanism allows the model to attend to different parts of the input sequence and capture both local and global dependencies. It provides a powerful way to model relationships between elements in the sequence, facilitating better representation learning.
+
+In the Transformer architecture, self-attention is applied in multiple layers, allowing the model to capture complex dependencies and make more informed predictions. This, combined with the encoder-decoder structure and additional components such as positional encoding and feed-forward neural networks, has made the Transformer highly successful in various natural language processing tasks, including machine translation, text generation, and language understanding.
+            </p>
+            <p class="card-text">Transformer consists of an encoder-decoder structure. The encoder takes the input sequence and applies multiple layers of self-attention and feed-forward neural networks. Each layer in the encoder attends to all positions in the previous layer, enabling the model to capture both local and global dependencies.</p>
+            <p class="card-text">The decoder takes the encoded representation and generates the output sequence step by step. It also utilizes self-attention layers along with encoder-decoder attention layers to attend to different parts of the input and output sequences during the decoding process.</p>
+            <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-19-53-10.png" alt="Transformer Diagram" class="img-fluid">
+            <p class="card-text">The self-attention mechanism in Transformer allows the model to capture long-range dependencies and handle variable-length sequences effectively. By attending to different parts of the input sequence, the model can learn complex relationships and make accurate predictions.</p>
+            <p class="card-text">The self-attention mechanism is computed using the following formulas:</p>
+            <div class="row">
+              <div class="col">
+                <img src="https://theaisummer.com/static/159ccc4fea2cef811b570d55cb594992/d2a60/multi-head-self-attention-block-diagram.png" alt="Self-Attention Formula 1" class="img-fluid">
+              </div>
+              <div class="col">
+                <img src="https://jalammar.github.io/images/t/self-attention-matrix-calculation-2.png" alt="Self-Attention Formula 2" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="applications">
+      <div class="container">
+        <h2>Applications</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/tensorflow/models/tree/master/official/nlp" target="_blank">Machine Translation with Transformer</a>
+          </li>
+          <li>
+            <a href="https://github.com/tensorflow/models/tree/master/official/nlp" target="_blank">Text Summarization with Transformer</a>
+          </li>
+          <li>
+            <a href="https://github.com/huggingface/transformers" target="_blank">Question Answering with Transformer</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
