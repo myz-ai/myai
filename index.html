@@ -1,110 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Deep Learning</title>
-</head>
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Deep Learning</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-         
-        </ul>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+
+    <title>bootstrap 4 sidebar</title>
+  </head>
+  <body>
+    <div class="row row-height" >
+      <div class="col-md-2 left">
+        <nav id="sidebar" style="height: 100%;">
+          <div class="sidebar-header">
+            <h3>AI Learning</h3>
+          </div>
+
+          <ul class="list-unstyled components">
+            <li>
+              <a href="#" onclick="changeIframeURL('nlp.html')">NLP</a>
+            </li>
+            <li>
+              <a href="#" onclick="changeIframeURL('cnn.html')">CNN</a>
+            </li>
+            <li>
+                <a href="#" onclick="changeIframeURL('rnn.html')">RNN</a>
+            </li>
+            <li>
+                <a href="#" onclick="changeIframeURL('transformer.html')">Transformer</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </nav>
-  </header>
-  
-  <main role="main">
-    <section id="about" class="py-5 text-center">
-      <div class="container">
-        <h1 class="display-4">Deep Learning</h1>
-        <p class="lead">Welcome to the Deep Learning website! Here you will find information about different types of Deep Learning.</p>
-        <a href="#waste-types" class="btn btn-primary">Learn More</a>
+      <div class="col-md-10 right">
+        <iframe
+            id="main-iframe"
+          style="width: 100%; height: 100vh;position: relative;"
+          src="cnn.html"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
       </div>
-    </section>
-    
-    <section id="waste-types" class="py-5 bg-light">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-md-4">
-            <a href="nlp.html">
-                <div class="card">
-                    <img src="https://miro.medium.com/v2/resize:fit:1200/1*zORAxCKoI6RglByVqt6jmg.png" class="card-img-top" alt="Glass">
-                    <div class="card-body">
-                      <h5 class="card-title">NLP</h5>
-                      <p class="card-text">NLP, which stands for Natural Language Processing, is a subfield of artificial intelligence that focuses on the interaction between computers and human language. It involves the development of algorithms and models that enable machines to understand, interpret, and generate natural language. NLP plays a crucial role in various applications, including machine translation, sentiment analysis, text summarization, question answering systems, and chatbots..</p>
-                    </div>
-                  </div>
-            </a>
-        
-          </div>
-
-          <div class="col-md-4">
-            <a href="cnn.html">
-                <div class="card">
-                    <img src="https://editor.analyticsvidhya.com/uploads/59954intro%20to%20CNN.JPG" class="card-img-top" alt="Cardboard">
-                    <div class="card-body">
-                      <h5 class="card-title">CNN</h5>
-                      <p class="card-text">CNN, which stands for Convolutional Neural Network, is a type of deep learning algorithm widely used in computer vision tasks. It is designed to mimic the visual processing abilities of the human brain and has revolutionized the field of image recognition and analysis. CNNs are particularly effective at detecting and recognizing patterns in images, making them invaluable in various applications such as object detection, image classification, and facial recognition..</p>
-                    </div>
-                  </div>
-
-            </a>
-
-          </div>
-
-
-          <div class="col-md-4">
-            <a href="rnn.html">
-                <div class="card">
-                    <img src="https://miro.medium.com/v2/resize:fit:1194/1*B0q2ZLsUUw31eEImeVf3PQ.png" class="card-img-top" alt="Glass">
-                    <div class="card-body">
-                      <h5 class="card-title">RNN</h5>
-                      <p class="card-text">RNN (Recurrent Neural Network) is a type of deep learning algorithm used for sequence data processing. It is designed to capture and model temporal dependencies within the data. Unlike traditional neural networks, RNN utilizes recurrent connections that allow information to be propagated and retained within the network.This enables RNN to exhibit memory capabilities, making it suitable for tasks such as natural language processing, speech recognition, time series prediction, and more.</p>
-                    </div>
-                  </div>
-            </a>
-        
-          </div>
-
-          <div class="col-md-4">
-            <a href="transformer.html">
-                <div class="card">
-                    <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2019/06/Screenshot-from-2019-06-17-20-01-32.png" class="card-img-top" alt="Glass">
-                    <div class="card-body">
-                      <h5 class="card-title">Transformer</h5>
-                      <p class="card-text">Transformer is a revolutionary deep learning architecture that has transformed the field of natural language processing and achieved state-of-the-art performance in various tasks. It was introduced by Vaswani et al. in 2017 and has gained significant attention due to its ability to capture long-range dependencies and parallelize computations effectively..</p>
-                    </div>
-                  </div>
-            </a>
-        
-          </div>
-          
-        </div>
-        
-      </div>
-    </section>
-  </main>
-  
-  <footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-      <p>&copy; 2023 Deep Learning. All rights reserved.</p>
     </div>
-  </footer>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function() {
+        $('#sidebarCollapse').on('click', function() {
+          $('#sidebar').toggleClass('active');
+        });
+      });
+
+      function changeIframeURL(url) {
+        document.getElementById('main-iframe').src = url;
+      }
+    </script>
+  </body>
 </html>
