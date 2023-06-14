@@ -1,0 +1,67 @@
+/*Set the row height to the viewport*/
+.row-height {
+    height: 100vh;
+  }
+  
+  /*Set up the columns with a 100% height, body color and overflow scroll*/
+  
+  .left {
+    height: 100%;
+    
+  }
+  
+  .right {
+    height: 100%;
+    /* overflow-y: scroll; */
+  }
+  
+  * {
+    -ms-overflow-style: none !important;
+  }
+  
+  a,
+  a:hover,
+  a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  
+  #sidebar {
+    min-width: 450px;
+    max-width: 450px;
+    background: #333;
+    color: #fff;
+    transition: all 0.3s;
+  }
+  
+  #sidebar .sidebar-header {
+    padding: 20px;
+    background: #005944;
+  }
+  #sidebar ul.components {
+    padding: 20px 0px;
+    border-bottom: 1px solid #47748b;
+  }
+  
+  #sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+  }
+  #sidebar ul li a:hover {
+    color: #019d78;
+    background: #fff;
+  }
+  
+  @media (maz-width: 768px) {
+    #sidebar {
+      margin-left: 250px;
+    }
+    #sidebar.active {
+      margin-left: 0px;
+    }
+    #sidebarCollapse span {
+      display: none;
+    }
+  }
