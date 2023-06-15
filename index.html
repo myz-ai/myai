@@ -30,7 +30,7 @@
           <div class="sidebar-header">
             <h3 onclick="changeIframeURL('main.html')">AI Learning</h3>
           </div>
-
+        
           <ul class="list-unstyled components">
             <li>
               <a href="#" onclick="changeIframeURL('nlp.html')">NLP</a>
@@ -45,7 +45,17 @@
                 <a href="#" onclick="changeIframeURL('transformer.html')">Transformer</a>
             </li>
           </ul>
+          <div class="d-flex flex-column" style="position: absolute; bottom: 10px; left: 0; right: 0;">
+            <button class="btn btn-primary btn-block mt-4" data-toggle="modal" data-target="#loginModal">
+              登录
+            </button>
+            <button class="btn btn-secondary btn-block mt-2" data-toggle="modal" data-target="#registerModal">
+              注册
+            </button>
+          </div>
         </nav>
+
+        
       </div>
       <div class="col-md-10 right">
         <iframe
@@ -56,7 +66,69 @@
           allowfullscreen
         ></iframe>
       </div>
+
+      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Login</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- 在这里添加登录表单 -->
+              <form>
+                <div class="form-group">
+                  <label for="username">UserName</label>
+                  <input type="text" class="form-control" id="username" placeholder="UserName">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- 注册模态框 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Register</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="username">UserName</label>
+            <input type="text" class="form-control" id="username" placeholder="UserName">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">rePassword</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="rePassword">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -88,4 +160,8 @@
       }
     </script>
   </body>
+
+  <style>
+    
+  </style>
 </html>
