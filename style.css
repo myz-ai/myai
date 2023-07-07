@@ -37,11 +37,12 @@
   
   #sidebar .sidebar-header {
     padding: 20px;
-    background: #005944;
+    background: #007bff;
   }
   #sidebar ul.components {
     padding: 20px 0px;
     border-bottom: 1px solid #47748b;
+
   }
   
   #sidebar ul li a {
@@ -50,8 +51,10 @@
     display: block;
   }
   #sidebar ul li a:hover {
-    color: #019d78;
+    color: #007bff;
     background: #fff;
+    border-radius: 10px;
+
   }
   
   @media (maz-width: 768px) {

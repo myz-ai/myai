@@ -1,101 +1,177 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>AI</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-    />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/css/admin/dashboard.css" rel="stylesheet">
+  <link href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/admin/style.css">
 
-    <title>AI Learning</title>
+      <style>
+        body{
+          height:100%;
+        }
+        label{
+          color:#9d9d9d;
+          position: relative;
+          top:15px;
+        }
+        .top{
+          color:#9d9d9d;
+          margin-right: 20px;
+          font-size: 13px;
+
+        }
+        .top:hover{
+          color:#fff;
+          text-decoration:none;
+
+        }
+        .top:hover .glyphicon{
+          color:#fff;
+        }
+        .sidebar{
+          width:220px;
+          background: #2e363f;
+          overflow: hidden;
+        }
+        .breadcrumb{
+          position:fixed;
+          width: 100%;
+          margin-top: 0;
+          z-index: 20;
+          background:#e8e8e8;
+          margin-left:220px;
+          overflow:hidden;
+
+        }
+        .breadcrumb a{
+         color:#000;
+       }
+       .breadcrumb .active a{
+         color:#777;
+       }
+       .breadcrumb li a:hover{
+        text-decoration: none;
+       }
+      #content{
+        margin-left: 220px;
+        margin-right: 0;
+
+        width: auto;
+        height:auto;
+
+      }
+      iframe{
+        width:100%;
+        height:100%;
+       }
+    </style>
   </head>
-  <body>
-    <div class="row row-height" >
-      <div class="col-md-2 left">
-        <nav id="sidebar" style="height: 100%;">
-          <div class="sidebar-header">
-            <h3 onclick="changeIframeURL('main.html')">AI Learning</h3>
-          </div>
-        
-          <ul class="list-unstyled components">
-            <li>
-              <a href="#" onclick="changeIframeURL('nlp.html')">NLP</a>
-            </li>
-            <li>
-              <a href="#" onclick="changeIframeURL('cnn.html')">CNN</a>
-            </li>
-            <li>
-                <a href="#" onclick="changeIframeURL('rnn.html')">RNN</a>
-            </li>
-            <li>
-                <a href="#" onclick="changeIframeURL('transformer.html')">Transformer</a>
-            </li>
-          </ul>
-          <div class="d-flex flex-column" style="position: absolute; bottom: 10px; left: 0; right: 0;">
-            <button class="btn btn-primary btn-block mt-4" data-toggle="modal" data-target="#loginModal">
-              Login
-            </button>
-            <button class="btn btn-secondary btn-block mt-2" data-toggle="modal" data-target="#registerModal">
-              Register
-            </button>
-          </div>
-        </nav>
+  <body style="">
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
 
-        
+        <a class="navbar-brand" href="#" style="color:#a4d3ee;margin-left: 10px;font-size:23px">AI Learning</a>
       </div>
-      <div class="col-md-10 right">
-        <iframe
-            id="main-iframe"
-          style="width: 100%; height: 100vh;position: relative;"
-          src="main.html"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="top"  href="#" >
+            <i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;<span id="username"></span>
+          </a></li>
+          <!-- <li><a class="top"  href="#" ><i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp;我的信息</a></li> -->
+          <li><a class="top" data-toggle="modal" data-target="#loginModal"  href="#" ><i ></i>&nbsp;&nbsp;
+            Login</a></li>
+          <li><a class="top" data-toggle="modal" data-target="#registerModal" href="#" ><i ></i>&nbsp;&nbsp;   
+            Register
+          </a></li>
+        </ul>
 
-      <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="loginModalLabel">Login</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <!-- 在这里添加登录表单 -->
-              <form>
-                <div class="form-group">
-                  <label for="username">UserName</label>
-                  <input type="text" class="form-control" id="username" placeholder="UserName">
-                </div>
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-              </form>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul id="accordion" class="accordion">
+         <li class="active">
+          <div class="link"><i class="fa fa-home"></i>Dashboard</div>
+        </li>
+        <li>
+          <div class="link">Basic knowledge AI<i class="fa fa-chevron-down"></i></div>
+          <ul class="submenu">
+            <li><a href="nlp.html" target="content">NLP</a></li>
+            <li><a href="cnn.html" target="content">CNN</a></li>
+            <li><a href="rnn.html" target="content">RNN</a></li>
+            <li><a href="transformer.html" target="content">Transformer</a></li>
+       
+ 
+         </ul>
+       </li>
 
-    <!-- 注册模态框 -->
+       <li>
+        <div class="link">Question<i class="fa fa-chevron-down"></i></div>
+        <ul class="submenu">
+          <li><a href="answer.html" target="content">Question</a></li>
+         
+
+       </ul>
+     </li>
+
+     <li>
+      <div class="link">Forum<i class="fa fa-chevron-down"></i></div>
+      <ul class="submenu">
+        <li><a href="message.html" target="content">Forum</a></li>
+       
+
+     </ul>
+   </li>
+    </ul>
+  </div>
+</div>
+</div>
+<!--  导航 -->
+
+<ul class="breadcrumb" id="bread">
+  <li><a href=""><i class="fa fa-home"></i>Index</a></li>
+</ul>
+<!-- 展示内容 -->
+<div id="content">
+  <iframe src="main.html" frameborder="0" id="iframe" name="content" scrolling="yes"></iframe>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+    
+          <div class="form-group">
+            <label for="log_username">UserName</label>
+            <input type="text" class="form-control" id="log_username" placeholder="UserName">
+          </div>
+          <div class="form-group">
+            <label for="log_password">Password</label>
+            <input type="password" class="form-control" id="log_password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary" id="loginButton">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -106,62 +182,187 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <!-- <form> -->
           <div class="form-group">
-            <label for="username">UserName</label>
-            <input type="text" class="form-control" id="username" placeholder="UserName">
+            <label for="reg_username">UserName</label>
+            <input type="text" class="form-control" id="reg_username" placeholder="UserName">
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <label for="reg_password">Password</label>
+            <input type="password" class="form-control" id="reg_password" placeholder="Password">
           </div>
           <div class="form-group">
             <label for="confirmPassword">rePassword</label>
             <input type="password" class="form-control" id="confirmPassword" placeholder="rePassword">
           </div>
-        </form>
+        <!-- </form> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Register</button>
+        <button type="button" class="btn btn-primary" id="registerButton" >Register</button>
       </div>
     </div>
   </div>
 </div>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-
-    <script>
-      $(document).ready(function() {
-        $('#sidebarCollapse').on('click', function() {
-          $('#sidebar').toggleClass('active');
-        });
-      });
-
-      function changeIframeURL(url) {
-        document.getElementById('main-iframe').src = url;
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="static/js/admin/index.js"></script>
+<script>
+  function innUserName(){
+        let username = localStorage.getItem("username");
+        let usernameId =  document.getElementById("username");
+        if(username != null){
+          
+           usernameId.innerHTML = `${username}`
+        }else{
+          usernameId.innerHTML = `Please Login`
+        }
       }
-    </script>
-  </body>
 
-  <style>
+      innUserName();
+      // $(document).ready(function() {
+      //   $('#sidebarCollapse').on('click', function() {
+      //     $('#sidebar').toggleClass('active');
+      //   });
+
+      //   $("#registerButton").click(function() {
+      //           var username = $("#reg_username").val();
+      //           var password = $("#reg_password").val();
+      //           var confirmPassword = $("#confirmPassword").val();
+      //           if(confirmPassword === password){ 
+      //             const registrationData = {
+      //                 UserName: username,
+      //                 Password: password,
+      //                 UserLevel: '1',
+      //                 UserPoints: 0
+      //               };
+      //               $.ajax({
+      //                 url: 'http://23.224.195.146:5000//register',
+      //                 type: 'POST',
+      //                 contentType: 'application/json',
+      //                 data: JSON.stringify(registrationData),
+      //                 success: function(data) {
+      //                   console.log(data.message); // Display the response message
+      //                 },
+      //                 error: function(error) {
+      //                   console.error('Error:', error);
+      //                 }
+      //               });
+                   
+      //           }else{
+      //             alert("Please enter same password")
+      //           }
+           
+      //       });
+
+      //   $("#loginButton").click(function() {
+      //           var username = $("#log_username").val();
+      //           var password = $("#log_password").val();
+      //           const loginData = {
+      //             UserName: username,
+      //             Password: password
+      //           };
+      //           fetch('http://23.224.195.146:5000//login', {
+      //             method: 'POST',
+      //             headers: {
+      //               'Content-Type': 'application/json'
+      //             },
+      //             body: JSON.stringify(loginData)
+      //           })
+      //             .then(response => response.json())
+      //             .then(data => {
+      //               if(data.code == 200){
+      //                 localStorage.setItem('username', loginData.UserName);
+      //                 localStorage.setItem('password', loginData.Password);
+      //                 let usernameId =  document.getElementById("username");
+      //                 usernameId.innerHTML = `${username}`
+                      
+      //               }
+                   
+      //             })
+      //             .catch(error => {
+      //               console.error('Error:', error);
+      //             });
+      //       })
+      // });
+
+  $(function(){
+    $("#registerButton").click(function() {
+                var username = $("#reg_username").val();
+                var password = $("#reg_password").val();
+                var confirmPassword = $("#confirmPassword").val();
+                if(confirmPassword === password){ 
+                  const registrationData = {
+                      UserName: username,
+                      Password: password,
+                      UserLevel: '1',
+                      UserPoints: 0
+                    };
+                    $.ajax({
+                      url: 'http://23.224.195.146:5000//register',
+                      type: 'POST',
+                      contentType: 'application/json',
+                      data: JSON.stringify(registrationData),
+                      success: function(data) {
+                        console.log(data.message); // Display the response message
+                      },
+                      error: function(error) {
+                        console.error('Error:', error);
+                      }
+                    });
+                   
+                }else{
+                  alert("Please enter same password")
+                }
+           
+            });
+
+        $("#loginButton").click(function() {
+                var username = $("#log_username").val();
+                var password = $("#log_password").val();
+                const loginData = {
+                  UserName: username,
+                  Password: password
+                };
+                fetch('http://23.224.195.146:5000//login', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(loginData)
+                })
+                  .then(response => response.json())
+                  .then(data => {
+                    if(data.code == 200){
+                      localStorage.setItem('username', loginData.UserName);
+                      localStorage.setItem('password', loginData.Password);
+                      let usernameId =  document.getElementById("username");
+                      usernameId.innerHTML = `${username}`
+                      
+                    }
+                   
+                  })
+                  .catch(error => {
+                    console.error('Error:', error);
+                  });
+            })
     
-  </style>
+            
+    $(".submenu li a").click(function  () {
+     $(".submenu li a").removeClass("add");
+     $(this).addClass("add");
+     var name=$(this).html();
+     var text=$(this).parent().parent().siblings("div").text();
+     // $(".breadcrumb .active").remove();
+     $("#bread").html("");
+     $("#bread").append("<li><a href=''><i class='fa fa-home'></i>首页</a></li>");
+     $("#bread").append("<li><a>"+text+"</a></li>");
+     $("#bread").append("<li><a href='#'>"+name+"</a></li>");
+     $(".breadcrumb li:last").addClass("active");
+   });
+    
+  })
+</script>
+</body>
 </html>

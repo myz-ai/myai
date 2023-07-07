@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Comment Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+
+        <div style="margin-top:20px" class="card message">
+                <div class="card-body">
+                    <h2 id="title" class="card-title message-title">Title1</h2>
+                    <p id="post_content" class="card-text message-content">content1</p>
+                </div>
+        </div> 
+        <div id="comments">
+            <!-- <div class="card message" style="margin-top:5px">
+              <div class="card-body">
+                <p id="post_content" class="card-text message-content">content1</p>
+              </div>
+            </div> -->
+        </div>
+
+      <div  class="floating-btn">
+        <!-- <label for="content">Comment Content</label> -->
+        <textarea class="form-control" id="content" rows="3" placeholder="Enter message content"></textarea>
+        <input type="button" value="Send" style="width:900px;margin-top: 20px;" id="sendPost" class="btn btn-primary"></input>
+    </div>
+
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+
+
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = urlParams.get('title');
+      const content = urlParams.get('content');
+
+      const titleElement = document.getElementById('title');
+      titleElement.textContent = title;
+
+      const contentElement = document.getElementById('post_content');
+      contentElement.textContent = content;
+      console.log(title)
+    //   var submitButton = document.getElementById("submit");
+    // submitButton.addEventListener("click", function(e) {
+      let postButton = document.getElementById("sendPost")
+
+      postButton.addEventListener("click", function(e) {
+        // e.preventDefault();
+        // let message = document.getElementById("message")
+        let content = document.getElementById("content")
+        // console.log(content.value)
+            const commentData = {
+                PostTitle: title, // Replace with the actual post title
+                CommentUser: localStorage.getItem("username"), // Replace with the actual comment user
+                CommentContent: content.value // Replace with the actual comment content
+            };
+
+            $.ajax({
+                url: 'http://23.224.195.146:5000//add_comment',
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                data: JSON.stringify(commentData),
+                dataType: 'json'
+              })
+             .then(res=>{              
+                getAll(title)
+             })
+      })
+      
+      getAll(title)
+      function getAll(title){
+
+        let divComments = $("#comments");
+        $.ajax({
+          url: `http://23.224.195.146:5000//post_comments?title=${encodeURIComponent(title)}`,
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          dataType: 'json'
+        })
+        .then(function(data) {
+          let allComment = "";
+          const postComments = data.comments;
+          postComments.forEach(comment => {
+          
+            let itemContent = `<div class="card message" style="margin-top:5px">
+              <div class="card-body">
+                <p id="post_content" class="card-text message-content">${comment[2]}</p>
+              </div>
+            </div>`;
+            allComment += itemContent;
+          });
+          
+          divComments.html(allComment);
+        })
+
+
+
+      }
+  
+  </script>
+</body>
+<style>
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      width: 900px;
+      /* right: 20px; */
+      }
+</style>
+</html>

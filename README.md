@@ -1,2 +1,2 @@
-# myai
-the study of machine learning and deep learning
+# Bootstrap-manger
+Bootstrap后台管理系统UI模板

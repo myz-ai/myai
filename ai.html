@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="robot">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="eye"></div>
+        <div class="eye"></div>
+        <div class="mouth"></div>
+      </div>
+</body>
+<style>
+    .robot {
+  width: 200px;
+  height: 300px;
+  background-color: #7ED6FF;
+  border-radius: 50%;
+  position: relative;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.head {
+  width: 120px;
+  height: 120px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.body {
+  width: 160px;
+  height: 200px;
+  background-color: #FFD700;
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.eye {
+  width: 30px;
+  height: 40px;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  border-radius: 50%;
+}
+
+.eye:nth-child(1) {
+  left: 40px;
+}
+
+.eye:nth-child(2) {
+  right: 40px;
+}
+
+.mouth {
+  width: 80px;
+  height: 40px;
+  background-color: #FF4500;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 0 0;
+}
+
+</style>
+</html>

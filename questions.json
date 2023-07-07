@@ -1,0 +1,644 @@
+{
+  "status":true,
+    "questions": [
+      {
+        "question": " What does AI stand for?",
+        "choose1": "A. Artificial Intelligence",
+        "choose2": "B. Advanced Interaction",
+        "choose3": "C. Automatic Inference",
+        "choose4": "D. Adaptive Interface",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which programming language is commonly used in AI development?",
+        "choose1": "A. Python",
+        "choose2": "B. Java",
+        "choose3": "C. C++",
+        "choose4": "D. Ruby",
+        "correct_choose": "A"
+      },
+      {
+        "question": " What is the purpose of a neural network in AI?",
+        "choose1": "A. Data storage",
+        "choose2": "B. User interface",
+        "choose3": "C. Pattern recognition",
+        "choose4": "D. Encryption",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which technique allows AI systems to learn from experience?",
+        "choose1": "A. Reinforcement learning",
+        "choose2": "B. Supervised learning",
+        "choose3": "C. Unsupervised learning",
+        "choose4": "D. Deep learning",
+        "correct_choose": "A"
+      },
+      {
+        "question": " What is the goal of natural language processing (NLP) in AI?",
+        "choose1": "A. Speech recognition",
+        "choose2": "B. Sentiment analysis",
+        "choose3": "C. Language translation",
+        "choose4": "D. All of the above",
+        "correct_choose": "D"
+      },
+      {
+        "question": "Which AI technique is inspired by the functioning of the human brain?",
+        "choose1": "A. Genetic algorithms",
+        "choose2": "B. Fuzzy logic",
+        "choose3": "C. Artificial neural networks",
+        "choose4": "D. Expert systems",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the main limitation of rule-based expert systems?",
+        "choose1": "A. Limited domain knowledge",
+        "choose2": "B. Slow processing speed",
+        "choose3": "C. Inability to handle uncertainty",
+        "choose4": "D. High implementation cost",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which AI application is used to analyze large datasets and make predictions?",
+        "choose1": "A. Computer vision",
+        "choose2": "B. Data mining",
+        "choose3": "C. Speech recognition",
+        "choose4": "D. Natural language processing",
+        "correct_choose": "B"
+      },
+      {
+        "question": " What is the role of machine learning in AI?",
+        "choose1": "A. Developing intelligent robots",
+        "choose2": "B. Creating virtual reality environments",
+        "choose3": "C. Enabling computers to learn without explicit programming",
+        "choose4": "D. Simulating human thought processes",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which AI technique is used for making decisions under uncertainty?",
+        "choose1": "A. Genetic algorithms",
+        "choose2": "B. Fuzzy logic",
+        "choose3": "C. Reinforcement learning",
+        "choose4": "D. Expert systems",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which type of learning is associated with labeled training data?",
+        "choose1": "A. Supervised learning",
+        "choose2": "B. Unsupervised learning",
+        "choose3": "C. Semi-supervised learning",
+        "choose4": "D. Reinforcement learning",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which AI technique is used to mimic human conversation?",
+        "choose1": "A. Computer vision",
+        "choose2": "B. Natural language processing",
+        "choose3": "C. Deep learning",
+        "choose4": "D. Reinforcement learning",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which AI application involves training machines to see and understand visual data?",
+        "choose1": "A. Speech recognition",
+        "choose2": "B. Robotics",
+        "choose3": "C. Computer vision",
+        "choose4": "D. Expert systems",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the purpose of an AI chatbot?",
+        "choose1": "A. Playing games",
+        "choose2": "B. Making phone calls",
+        "choose3": "C. Simulating human conversation",
+        "choose4": "D. Processing images",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which AI technique is used for solving complex optimization problems?",
+        "choose1": "A. Genetic algorithms",
+        "choose2": "B. Deep learning",
+        "choose3": "C. Expert systems",
+        "choose4": "D. Reinforcement learning",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which AI application involves teaching machines to understand and generate human speech?",
+        "choose1": "A. Natural language processing",
+        "choose2": "B. Computer vision",
+        "choose3": "C. Robotics",
+        "choose4": "D. Data mining",
+        "correct_choose": "A"
+      },
+      {
+        "question": " What is the main goal of computer vision in AI?",
+        "choose1": "A. Speech recognition",
+        "choose2": "B. Image classification",
+        "choose3": "C. Data analysis",
+        "choose4": "D. Language translation",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which AI technique is used to handle incomplete or uncertain information?",
+        "choose1": "A. Genetic algorithms",
+        "choose2": "B. Fuzzy logic",
+        "choose3": "C. Expert systems",
+        "choose4": "D. Reinforcement learning",
+        "correct_choose": "B"
+      },
+      {
+        "question": " What is the main application of AI in autonomous vehicles?",
+        "choose1": "A. Natural language processing",
+        "choose2": "B. Computer vision",
+        "choose3": "C. Expert systems",
+        "choose4": "D. Reinforcement learning",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which AI technique is used for predicting future outcomes based on historical data?",
+        "choose1": "A. Genetic algorithms",
+        "choose2": "B. Data mining",
+        "choose3": "C. Deep learning",
+        "choose4": "D. Reinforcement learning",
+        "correct_choose": "B"
+      },
+      {
+        "question": " What does CNN stand for?",
+        "choose1": "A. Convolutional Neural Network",
+        "choose2": "B. Complex Neural Network",
+        "choose3": "C. Continuous Neural Network",
+        "choose4": "D. Computerized Neural Network",
+        "correct_choose": "A"
+      },
+      {
+        "question": " What is the primary purpose of using convolutional layers in a CNN?",
+        "choose1": "A. Dimensionality reduction",
+        "choose2": "B. Feature extraction",
+        "choose3": "C. Activation function",
+        "choose4": "D. Error backpropagation",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which of the following is NOT a common activation function used in CNNs?",
+        "choose1": "A. ReLU (Rectified Linear Unit)",
+        "choose2": "B. Sigmoid",
+        "choose3": "C. Tanh (Hyperbolic Tangent)",
+        "choose4": "D. Softmax",
+        "correct_choose": "D"
+      },
+      {
+        "question": " What is the purpose of pooling layers in a CNN?",
+        "choose1": "A. To reduce overfitting",
+        "choose2": "B. To increase model complexity",
+        "choose3": "C. To perform feature concatenation",
+        "choose4": "D. To apply nonlinear activation",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which layer is responsible for learning and updating the weights in a CNN?",
+        "choose1": "A. Convolutional layer",
+        "choose2": "B. Pooling layer",
+        "choose3": "C. Fully connected layer",
+        "choose4": "D. Output layer",
+        "correct_choose": "C"
+      },
+      {
+        "question": "Which type of layer is typically used as the final layer in a CNN for classification tasks?",
+        "choose1": "A. Convolutional layer",
+        "choose2": "B. Pooling layer",
+        "choose3": "C. Fully connected layer",
+        "choose4": "D. Activation layer",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the purpose of zero-padding in a convolutional layer?",
+        "choose1": "A. To reduce computational complexity",
+        "choose2": "B. To preserve spatial dimensions",
+        "choose3": "C. To increase model interpretability",
+        "choose4": "D. To control overfitting",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which operation is performed by the pooling layer in a CNN?",
+        "choose1": "A. Convolution",
+        "choose2": "B. Element-wise multiplication",
+        "choose3": "C. Subtraction",
+        "choose4": "D. Downsampling",
+        "correct_choose": "D"
+      },
+      {
+        "question": " Which type of layer is responsible for the spatial invariance property of CNNs?",
+        "choose1": "A. Convolutional layer",
+        "choose2": "B. Pooling layer",
+        "choose3": "C. Fully connected layer",
+        "choose4": "D. Activation layer",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which technique is commonly used to prevent overfitting in CNNs?",
+        "choose1": "A. Dropout",
+        "choose2": "B. Batch normalization",
+        "choose3": "C. Weight regularization",
+        "choose4": "D. All of the above",
+        "correct_choose": "D"
+      },
+      {
+        "question": " What is the purpose of stride in a convolutional layer?",
+        "choose1": "A. To adjust the learning rate",
+        "choose2": "B. To control the filter size",
+        "choose3": "C. To determine the output size",
+        "choose4": "D. To control the filter movement",
+        "correct_choose": "D"
+      },
+      {
+        "question": " What is the primary advantage of using a CNN over a fully connected neural network for image processing?",
+        "choose1": "A. Higher computational efficiency",
+        "choose2": "B. Simpler model architecture",
+        "choose3": "C. Better generalization on new images",
+        "choose4": "D. Faster convergence during training",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which layer is responsible for capturing global features in a CNN?",
+        "choose1": "A. Convolutional layer",
+        "choose2": "B. Pooling layer",
+        "choose3": "C. Fully connected layer",
+        "choose4": "D. Activation layer",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which technique is commonly used to initialize the weights in a CNN?",
+        "choose1": "A. Random initialization",
+        "choose2": "B. Zero initialization",
+        "choose3": "C. Xavier/Glorot initialization",
+        "choose4": "D. He initialization",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the purpose of using multiple channels in a convolutional layer?",
+        "choose1": "A. To increase the receptive field",
+        "choose2": "B. To reduce the number of parameters",
+        "choose3": "C. To capture different types of features",
+        "choose4": "D. To control overfitting",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which type of layer is responsible for introducing nonlinearity in a CNN?",
+        "choose1": "A. Convolutional layer",
+        "choose2": "B. Pooling layer",
+        "choose3": "C. Fully connected layer",
+        "choose4": "D. Activation layer",
+        "correct_choose": "D"
+      },
+      {
+        "question": " Which technique is commonly used to visualize the learned features in a CNN?",
+        "choose1": "A. Activation maximization",
+        "choose2": "B. Gradient descent",
+        "choose3": "C. Principal component analysis",
+        "choose4": "D. K-means clustering",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which layer is responsible for reducing the spatial dimensions in a CNN?",
+        "choose1": "A. Convolutional layer",
+        "choose2": "B. Pooling layer",
+        "choose3": "C. Fully connected layer",
+        "choose4": "D. Activation layer",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which technique is commonly used to handle vanishing gradients in deep CNNs?",
+        "choose1": "A. Skip connections",
+        "choose2": "B. Weight initialization",
+        "choose3": "C. Learning rate schedule",
+        "choose4": "D. Batch normalization",
+        "correct_choose": "D"
+      },
+      {
+        "question": " Which layer is responsible for producing the final output predictions in a CNN?",
+        "choose1": "A. Convolutional layer",
+        "choose2": "B. Pooling layer",
+        "choose3": "C. Fully connected layer",
+        "choose4": "D. Activation layer",
+        "correct_choose": "C"
+      },{
+        "question": " What is the Transformer architecture primarily used for?",
+        "choose1": "A. Speech recognition",
+        "choose2": "B. Image classification",
+        "choose3": "C. Machine translation",
+        "choose4": "D. Reinforcement learning",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which component of the Transformer model is responsible for capturing the relationships between different words in a sequence?",
+        "choose1": "A. Encoder",
+        "choose2": "B. Decoder",
+        "choose3": "C. Attention mechanism",
+        "choose4": "D. Positional encoding",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the purpose of positional encoding in the Transformer model?",
+        "choose1": "A. To handle variable-length input sequences",
+        "choose2": "B. To introduce nonlinearity in the model",
+        "choose3": "C. To capture word embeddings",
+        "choose4": "D. To represent the order of words in a sequence",
+        "correct_choose": "D"
+      },
+      {
+        "question": " Which type of attention is used in the Transformer model?",
+        "choose1": "A. Self-attention",
+        "choose2": "B. Global attention",
+        "choose3": "C. Local attention",
+        "choose4": "D. Hierarchical attention",
+        "correct_choose": "A"
+      },
+      {
+        "question": " In the Transformer model, what is the purpose of the encoder?",
+        "choose1": "A. To generate target sequences",
+        "choose2": "B. To decode input sequences",
+        "choose3": "C. To encode input sequences into hidden representations",
+        "choose4": "D. To compute attention weights",
+        "correct_choose": "C"
+      },
+      {
+        "question": "Which activation function is commonly used in the Transformer model?",
+        "choose1": "A. ReLU (Rectified Linear Unit)",
+        "choose2": "B. Sigmoid",
+        "choose3": "C. Tanh (Hyperbolic Tangent)",
+        "choose4": "D. GELU (Gaussian Error Linear Unit)",
+        "correct_choose": "D"
+      },
+      {
+        "question": " What is the purpose of the decoder in the Transformer model?",
+        "choose1": "A. To generate target sequences",
+        "choose2": "B. To encode input sequences into hidden representations",
+        "choose3": "C. To compute attention weights",
+        "choose4": "D. To capture word embeddings",
+        "correct_choose": "A"
+      },
+      {
+        "question": " How are the attention scores computed in the Transformer model?",
+        "choose1": "A. Dot product",
+        "choose2": "B. Concatenation",
+        "choose3": "C. Element-wise multiplication",
+        "choose4": "D. Softmax",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which technique is commonly used to improve the efficiency of the Transformer model?",
+        "choose1": "A. Pruning",
+        "choose2": "B. Quantization",
+        "choose3": "C. Knowledge distillation",
+        "choose4": "D. Attention dropout",
+        "correct_choose": "D"
+      },
+      {
+        "question": " What is the purpose of the positional-wise feed-forward networks in the Transformer model?",
+        "choose1": "A. To perform dimensionality reduction",
+        "choose2": "B. To introduce nonlinearity",
+        "choose3": "C. To compute attention scores",
+        "choose4": "D. To compute positional encodings",
+        "correct_choose": "B"
+      },
+      {
+        "question": " What is the role of the residual connections in the Transformer model?",
+        "choose1": "A. To allow gradients to flow directly",
+        "choose2": "B. To reduce model size",
+        "choose3": "C. To increase model capacity",
+        "choose4": "D. To handle variable-length sequences",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which type of problem is the Transformer model well-suited for?",
+        "choose1": "A. Image segmentation",
+        "choose2": "B. Object detection",
+        "choose3": "C. Text classification",
+        "choose4": "D. Reinforcement learning",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the purpose of multi-head attention in the Transformer model?",
+        "choose1": "A. To improve attention performance",
+        "choose2": "B. To reduce model size",
+        "choose3": "C. To handle variable-length sequences",
+        "choose4": "D. To compute positional encodings",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which algorithm is commonly used to train the Transformer model?",
+        "choose1": "A. Adam",
+        "choose2": "B. SGD (Stochastic Gradient Descent)",
+        "choose3": "C. RMSprop",
+        "choose4": "D. Adagrad",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which layer normalization technique is used in the Transformer model?",
+        "choose1": "A. Batch normalization",
+        "choose2": "B. Instance normalization",
+        "choose3": "C. Group normalization",
+        "choose4": "D. Residual normalization",
+        "correct_choose": "A"
+      },
+      {
+        "question": " What is the purpose of the mask in the self-attention mechanism of the Transformer model?",
+        "choose1": "A. To restrict attention to future positions",
+        "choose2": "B. To prioritize attention to specific positions",
+        "choose3": "C. To compute attention scores",
+        "choose4": "D. To introduce nonlinearity",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which technique is commonly used to handle long input sequences in the Transformer model?",
+        "choose1": "A. Chunking",
+        "choose2": "B. Truncation",
+        "choose3": "C. Positional encoding",
+        "choose4": "D. Attention masking",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which metric is commonly used to evaluate the performance of the Transformer model in machine translation tasks?",
+        "choose1": "A. Accuracy",
+        "choose2": "B. F score",
+        "choose3": "C. BLEU score",
+        "choose4": "D. Mean squared error",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the main advantage of the Transformer model over recurrent neural networks (RNNs) for sequence-to-sequence tasks?",
+        "choose1": "A. Better handling of long-term dependencies",
+        "choose2": "B. Lower memory requirements",
+        "choose3": "C. Faster training time",
+        "choose4": "D. Improved parallelism",
+        "correct_choose": "D"
+      },
+      {
+        "question": " Which Transformer variant introduces the concept of pre-training and fine-tuning on large-scale language modeling tasks?",
+        "choose1": "A. BERT",
+        "choose2": "B. GPT (Generative Pre-trained Transformer)",
+        "choose3": "C. T5 (Text-to-Text Transfer Transformer)",
+        "choose4": "D. XLNet",
+        "correct_choose": "B"
+      },{
+        "question": " What is the goal of natural language processing (NLP)?",
+        "choose1": "A. Speech recognition",
+        "choose2": "B. Machine translation",
+        "choose3": "C. Text classification",
+        "choose4": "D. All of the above",
+        "correct_choose": "D"
+      },
+      {
+        "question": " Which of the following is an example of a pre-processing step in NLP?",
+        "choose1": "A. Tokenization",
+        "choose2": "B. Stemming",
+        "choose3": "C. Lemmatization",
+        "choose4": "D. All of the above",
+        "correct_choose": "D"
+      },
+      {
+        "question": " What is the purpose of tokenization in NLP?",
+        "choose1": "A. To split text into individual words or tokens",
+        "choose2": "B. To remove stop words from text",
+        "choose3": "C. To convert text to lowercase",
+        "choose4": "D. To replace abbreviations with their full forms",
+        "correct_choose": "A"
+      },
+      {
+        "question": " What is the main challenge of named entity recognition (NER) in NLP?",
+        "choose1": "A. Sentiment analysis",
+        "choose2": "B. Part-of-speech tagging",
+        "choose3": "C. Identifying and classifying named entities in text",
+        "choose4": "D. Topic modeling",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which technique is commonly used for sentiment analysis in NLP?",
+        "choose1": "A. Naive Bayes",
+        "choose2": "B. Support Vector Machines (SVM)",
+        "choose3": "C. Recurrent Neural Networks (RNN)",
+        "choose4": "D. All of the above",
+        "correct_choose": "D"
+      },
+      {
+        "question": "What is the purpose of word embedding in NLP?",
+        "choose1": "A. To represent words as numeric vectors",
+        "choose2": "B. To perform dimensionality reduction",
+        "choose3": "C. To compute word frequencies",
+        "choose4": "D. To remove stop words",
+        "correct_choose": "A"
+      },
+      {
+        "question": " Which model architecture is commonly used for machine translation in NLP?",
+        "choose1": "A. Convolutional Neural Networks (CNN)",
+        "choose2": "B. Long Short-Term Memory (LSTM)",
+        "choose3": "C. Transformer",
+        "choose4": "D. Bidirectional Encoder Representations from Transformers (BERT)",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the purpose of named entity recognition (NER) in NLP?",
+        "choose1": "A. To determine the sentiment of a text",
+        "choose2": "B. To identify the grammatical structure of a sentence",
+        "choose3": "C. To extract and classify named entities from text",
+        "choose4": "D. To perform topic modeling",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which technique is commonly used for text summarization in NLP?",
+        "choose1": "A. Latent Semantic Analysis (LSA)",
+        "choose2": "B. Term Frequency-Inverse Document Frequency (TF-IDF)",
+        "choose3": "C. TextRank",
+        "choose4": "D. All of the above",
+        "correct_choose": "D"
+      },
+      {
+        "question": " What is the purpose of part-of-speech (POS) tagging in NLP?",
+        "choose1": "A. To determine the sentiment of a text",
+        "choose2": "B. To identify the grammatical structure of a sentence",
+        "choose3": "C. To perform text classification",
+        "choose4": "D. To generate word embeddings",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which algorithm is commonly used for topic modeling in NLP?",
+        "choose1": "A. K-means clustering",
+        "choose2": "B. Hierarchical Dirichlet Process (HDP)",
+        "choose3": "C. Latent Dirichlet Allocation (LDA)",
+        "choose4": "D. Support Vector Machines (SVM)",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the purpose of named entity recognition (NER) in NLP?",
+        "choose1": "A. To determine the sentiment of a text",
+        "choose2": "B. To identify the grammatical structure of a sentence",
+        "choose3": "C. To extract and classify named entities from text",
+        "choose4": "D. To perform topic modeling",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which technique is commonly used for text classification in NLP?",
+        "choose1": "A. Naive Bayes",
+        "choose2": "B. K-nearest neighbors (KNN)",
+        "choose3": "C. Random Forest",
+        "choose4": "D. All of the above",
+        "correct_choose": "D"
+      },
+      {
+        "question": " Which model architecture is commonly used for question-answering tasks in NLP?",
+        "choose1": "A. Convolutional Neural Networks (CNN)",
+        "choose2": "B. Long Short-Term Memory (LSTM)",
+        "choose3": "C. Transformer",
+        "choose4": "D. Recursive Neural Networks (RNN)",
+        "correct_choose": "C"
+      },
+      {
+        "question": " What is the purpose of text generation in NLP?",
+        "choose1": "A. To perform sentiment analysis",
+        "choose2": "B. To convert speech to text",
+        "choose3": "C. To generate human-like text",
+        "choose4": "D. To classify documents into categories",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which evaluation metric is commonly used for machine translation tasks in NLP?",
+        "choose1": "A. Accuracy",
+        "choose2": "B. F score",
+        "choose3": "C. BLEU score",
+        "choose4": "D. Mean squared error",
+        "correct_choose": "C"
+      },
+      {
+        "question": " Which technique is commonly used for word sense disambiguation in NLP?",
+        "choose1": "A. Named Entity Recognition (NER)",
+        "choose2": "B. Part-of-speech (POS) tagging",
+        "choose3": "C. Word embeddings",
+        "choose4": "D. WordNet",
+        "correct_choose": "D"
+      },
+      {
+        "question": " What is the purpose of dependency parsing in NLP?",
+        "choose1": "A. To determine the sentiment of a text",
+        "choose2": "B. To identify the grammatical structure of a sentence",
+        "choose3": "C. To perform text classification",
+        "choose4": "D. To generate word embeddings",
+        "correct_choose": "B"
+      },
+      {
+        "question": " Which technique is commonly used for text similarity measurement in NLP?",
+        "choose1": "A. Cosine similarity",
+        "choose2": "B. Euclidean distance",
+        "choose3": "C. Jaccard similarity",
+        "choose4": "D. All of the above",
+        "correct_choose": "D"
+      },
+      {
+        "question": " Which model architecture is commonly used for sentiment analysis in NLP?",
+        "choose1": "A. Convolutional Neural Networks (CNN)",
+        "choose2": "B. Long Short-Term Memory (LSTM)",
+        "choose3": "C. Transformer",
+        "choose4": "D. Recursive Neural Networks (RNN)",
+        "correct_choose": "B"
+      }
+    ]
+  }
+  

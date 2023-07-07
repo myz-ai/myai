@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <h1 style="margin-top:30px">Question Page</h1>
+    <div class="container" id="container"></div>
+    <button style="display:flex;margin-left: 45%;" type="button" class="btn btn-primary mt-3" id="submit">Submit Answer</button>
+  </div>
+
+  <script>
+    let username = localStorage.getItem("currect_username")
+    if(username == null || username== ''){
+      alter('please login')
+    }else{
+      build();
+
+    }
+    
+   function build(){
+    let correctAnswer = []
+    var currentQuestionIndex = 0; // 当前题目的索引
+    var allQuestions = []; // 存储所有的题目
+
+    function getRandomElements(array, numElements) {
+      var shuffled = array.slice(0);
+      var randomElements = [];
+      var currentIndex = shuffled.length;
+      var temporaryValue, randomIndex;
+
+      while (currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        temporaryValue = shuffled[currentIndex];
+        shuffled[currentIndex] = shuffled[randomIndex];
+        shuffled[randomIndex] = temporaryValue;
+      }
+
+      randomElements = shuffled.slice(0, numElements);
+
+      return randomElements;
+    }
+
+    function buildElement(id, data) {
+      var container = document.getElementById(id);
+      container.innerHTML = ''; // 清空容器内容
+
+      // Traverse data and generate questions and options
+      data.forEach(function(item, index) {
+        var card = document.createElement("div");
+        card.className = "card";
+
+        var cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+
+        var cardTitle = document.createElement("h5");
+        cardTitle.className = "card-title";
+        cardTitle.textContent = "Question " + (currentQuestionIndex+1);
+
+        var cardText = document.createElement("p");
+        cardText.className = "card-text";
+        cardText.textContent = item.question;
+
+        var formGroup = document.createElement("div");
+        formGroup.className = "form-group";
+
+        for (var i = 1; i <= 4; i++) {
+          var optionId = "question" + (index + 1) + "_option" + i;
+
+          var formCheck = document.createElement("div");
+          formCheck.className = "form-check";
+
+          var radioInput = document.createElement("input");
+          radioInput.className = "form-check-input";
+          radioInput.type = "radio";
+          radioInput.name = "question" + (index + 1);
+          radioInput.id = optionId;
+          radioInput.value = "option" + i;
+
+          var label = document.createElement("label");
+          label.className = "form-check-label";
+          label.htmlFor = optionId;
+
+          var optionText = item["choose" + i];
+          label.textContent = optionText;
+
+          formCheck.appendChild(radioInput);
+          formCheck.appendChild(label);
+
+          formGroup.appendChild(formCheck);
+        }
+
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(formGroup);
+
+        card.appendChild(cardBody);
+
+        container.appendChild(card);
+      });
+    }
+
+    function displayQuestion() {
+      var container = document.getElementById("container");
+      container.innerHTML = ''; // 清空容器内容
+
+      if (currentQuestionIndex < allQuestions.length) {
+        var question = allQuestions[currentQuestionIndex];
+        buildElement("container", [question]);
+      } else {
+        let score = 0
+        for (let i = 0; i < correctAnswer.length; i++){
+          score+=correctAnswer[i];
+        }
+        container.innerHTML = `<p>All questions have been answered.</p> <p> Score: ${score} </p>`;
+        //store database
+        //
+        let userName = localStorage.getItem("username");
+        const updateData = {
+          UserName: userName,
+          UserPoints: score
+        };
+
+        fetch('http://23.224.195.146:5000//update-points', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updateData)
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data.message); // Display the response message
+            // alter("")
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+      }
+    }
+
+    function getData() {
+      $.get("/questions.json", function(data) {
+        if (data.status) {
+          allQuestions = getRandomElements(data.questions, 20);
+          displayQuestion();
+        }
+      }).fail(function() {
+        // console.log("请求失败");
+      });
+    }
+    getData();
+
+    let optionMap = {
+      option1:'A',
+      option2:'B',
+      option3:'C',
+      option4:'D',
+    }
+
+    
+    var submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", function(e) {
+      // e.preventDefault();
+      // 获取当前题目的选择
+      var currentQuestion = allQuestions[currentQuestionIndex];
+      var selectedOption = document.querySelector('input[name="question' + 1 + '"]:checked');
+      var userAnswer = selectedOption ? selectedOption.value : ""; // 获取用户选择的答案
+
+      // 输出当前题目的选择
+      // console.log("Question:", currentQuestion.question);
+      // console.log("User Answer:", optionMap[userAnswer]);
+      // console.log("Correct Answer:", currentQuestion.correct_choose);
+      if(optionMap[userAnswer] === currentQuestion.correct_choose){
+          correctAnswer.push(1)
+      }
+      currentQuestionIndex++; // 增加当前题目索引
+      displayQuestion(); // 显示下一道题目
+    });
+
+   }
+  </script>
+</body>
+
+</html>

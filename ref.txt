@@ -1,0 +1,23 @@
+1. Wikipedia: Natural Language Processing
+   - URL: [https://en.wikipedia.org/wiki/Natural_language_processing](https://en.wikipedia.org/wiki/Natural_language_processing)
+
+2. Medium: Training Word2Vec using Gensim
+   - URL: [https://swatimeena989.medium.com/training-word2vec-using-gensim-14433890e8e4](https://swatimeena989.medium.com/training-word2vec-using-gensim-14433890e8e4)
+
+3. Quora: Why is it needed to split sentences if the next step is tokenization in NLP?
+   - URL: [https://www.quora.com/Why-is-it-needed-to-split-sentences-if-the-next-step-is-tokenization-in-NLP](https://www.quora.com/Why-is-it-needed-to-split-sentences-if-the-next-step-is-tokenization-in-NLP)
+
+4. Anolytics AI Blog: Commonly Used Text Annotations in Natural Language Processing
+   - URL: [https://www.anolytics.ai/blog/commonly-used-text-annotations-in-natural-language-processing/](https://www.anolytics.ai/blog/commonly-used-text-annotations-in-natural-language-processing/)
+
+5. Wikipedia: Transformer
+   - URL: [https://en.wikipedia.org/wiki/Transformer](https://en.wikipedia.org/wiki/Transformer)
+
+6. Wikipedia: Recurrent Neural Network
+   - URL: [https://en.wikipedia.org/wiki/Recurrent_neural_network](https://en.wikipedia.org/wiki/Recurrent_neural_network)
+
+7. Wikipedia: Long Short-Term Memory (LSTM)
+   - URL: [https://en.wikipedia.org/wiki/Long_short-term_memory](https://en.wikipedia.org/wiki/Long_short-term_memory)
+
+8. Wikipedia: Gated Recurrent Unit (GRU)
+   - URL: [https://en.wikipedia.org/wiki/Gated_recurrent_unit](https://en.wikipedia.org/wiki/Gated_recurrent_unit)
